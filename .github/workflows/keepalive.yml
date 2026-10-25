@@ -1,0 +1,12 @@
+# Pings the API weekly so the free Supabase project does not pause from inactivity.
+# Setup: GitHub repo > Settings > Secrets and variables > Actions > Variables > add APP_URL
+name: keepalive
+on:
+  schedule:
+    - cron: "0 6 * * 1,4"
+  workflow_dispatch:
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - run: curl -fsS --max-time 120 "${{ vars.APP_URL }}/health/db"

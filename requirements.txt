@@ -1,0 +1,12 @@
+# Tip: after testing locally, run `pip freeze` and pin exact versions for reproducible builds.
+fastapi
+uvicorn[standard]
+python-dotenv
+langchain-core
+langchain-community
+langchain-google-genai
+langchain-postgres
+langgraph
+fastembed
+psycopg[binary]
+supabase

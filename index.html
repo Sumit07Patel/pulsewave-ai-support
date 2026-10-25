@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PulseWave | Earbuds, speaker and smartwatch with AI support</title>
+<meta name="description" content="PulseWave demo store with an AI support assistant that answers only from the manuals of Airdopes Apex, Stone Spark and StormCall Plus. Portfolio project: FastAPI, LangGraph, Supabase pgvector, FastEmbed, Gemini Flash.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={theme:{extend:{fontFamily:{display:['"Bricolage Grotesque"','system-ui','sans-serif'],sans:['"DM Sans"','system-ui','sans-serif']},colors:{ink:'#0D0F1A',panel:'#161A2B',line:'#262C45',bone:'#EDEEF5',mute:'#9AA0BC',pulse:'#FF4D6D',lav:'#8E8CFF'}}}}</script>
+<style>
+  html{scroll-behavior:smooth}
+  .bar{transform-origin:center;animation:wave 1.6s ease-in-out infinite}
+  @keyframes wave{0%,100%{transform:scaleY(.15)}50%{transform:scaleY(1)}}
+  .dot{animation:bounce 1s infinite}.dot:nth-child(2){animation-delay:.15s}.dot:nth-child(3){animation-delay:.3s}
+  @keyframes bounce{0%,80%,100%{opacity:.3;transform:translateY(0)}40%{opacity:1;transform:translateY(-3px)}}
+  @keyframes ping2{75%,100%{transform:scale(2.2);opacity:0}}.ping{animation:ping2 1.6s cubic-bezier(0,0,.2,1) infinite}
+  .glow{background:radial-gradient(60% 50% at 50% 0%,rgba(255,77,109,.22),transparent 70%),radial-gradient(40% 40% at 90% 40%,rgba(142,140,255,.16),transparent 70%)}
+  .chatglow{box-shadow:0 0 0 1px rgba(255,77,109,.35),0 30px 80px -20px rgba(255,77,109,.35),0 0 120px -30px rgba(142,140,255,.4)}
+  #chat-container::-webkit-scrollbar{width:6px}#chat-container::-webkit-scrollbar-thumb{background:#262C45;border-radius:3px}
+  a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #FF4D6D;outline-offset:2px}
+  .tab[aria-pressed=true]{background:#FF4D6D;border-color:#FF4D6D;color:#fff}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body class="bg-ink text-bone font-sans selection:bg-pulse selection:text-white">
+
+<svg width="0" height="0" class="absolute" aria-hidden="true">
+  <symbol id="buds" viewBox="0 0 120 100">
+    <rect x="22" y="40" width="76" height="50" rx="22" fill="currentColor" opacity=".18"/><rect x="22" y="40" width="76" height="50" rx="22" fill="none" stroke="currentColor" stroke-width="3"/>
+    <path d="M22 62h76" stroke="currentColor" stroke-width="2" opacity=".5"/>
+    <ellipse cx="44" cy="30" rx="11" ry="14" fill="currentColor"/><rect x="40" y="38" width="7" height="22" rx="3.5" fill="currentColor"/>
+    <ellipse cx="76" cy="30" rx="11" ry="14" fill="currentColor"/><rect x="73" y="38" width="7" height="22" rx="3.5" fill="currentColor"/>
+    <circle cx="60" cy="76" r="3" fill="#FF4D6D"/>
+  </symbol>
+  <symbol id="speaker" viewBox="0 0 120 100">
+    <rect x="14" y="26" width="92" height="48" rx="24" fill="currentColor" opacity=".18"/><rect x="14" y="26" width="92" height="48" rx="24" fill="none" stroke="currentColor" stroke-width="3"/>
+    <path d="M36 34v32M46 32v36M56 31v38M66 31v38M76 32v36M86 34v32" stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity=".7"/>
+    <rect x="30" y="78" width="60" height="5" rx="2.5" fill="currentColor" opacity=".5"/><circle cx="60" cy="20" r="3" fill="#FF4D6D"/>
+  </symbol>
+  <symbol id="watch" viewBox="0 0 120 100">
+    <rect x="44" y="2" width="32" height="26" rx="7" fill="currentColor" opacity=".3"/><rect x="44" y="72" width="32" height="26" rx="7" fill="currentColor" opacity=".3"/>
+    <rect x="32" y="22" width="56" height="56" rx="16" fill="currentColor" opacity=".18"/><rect x="32" y="22" width="56" height="56" rx="16" fill="none" stroke="currentColor" stroke-width="3"/>
+    <rect x="39" y="29" width="42" height="42" rx="10" fill="currentColor" opacity=".25"/><path d="M60 40v11l8 5" stroke="currentColor" stroke-width="3" stroke-linecap="round" fill="none"/>
+    <rect x="88" y="38" width="6" height="12" rx="3" fill="#FF4D6D"/>
+  </symbol>
+</svg>
+
+<!-- ============ PART 1: BRAND WEBSITE ============ -->
+<header class="sticky top-0 z-50 bg-ink/90 backdrop-blur border-b border-line">
+  <nav class="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between" aria-label="Main">
+    <a href="#top" class="font-display font-extrabold text-xl tracking-tight flex items-center gap-2">
+      <svg class="w-6 h-6 text-pulse" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M3 12h2M8 7v10M13 4v16M18 8v8M21 12h0"/></svg>PulseWave
+    </a>
+    <ul class="hidden md:flex items-center gap-8 text-sm text-mute">
+      <li><a class="hover:text-bone transition" href="#products">Products</a></li>
+      <li><a class="hover:text-bone transition" href="#why">Why PulseWave</a></li>
+      <li><a class="hover:text-bone transition" href="#project">About this project</a></li>
+    </ul>
+    <a href="#support" class="bg-pulse hover:bg-rose-500 text-white text-sm font-medium pl-3 pr-4 py-2 rounded-full transition flex items-center gap-2">
+      <span class="relative flex h-2 w-2"><span class="ping absolute inline-flex h-full w-full rounded-full bg-white/80"></span><span class="relative h-2 w-2 rounded-full bg-white"></span></span>Ask AI Support</a>
+  </nav>
+</header>
+
+<main id="top">
+  <!-- Hero -->
+  <section class="glow">
+    <div class="max-w-6xl mx-auto px-5 pt-14 md:pt-20 pb-16 grid lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <p class="text-sm text-lav font-medium mb-5">Earbuds. Speaker. Smartwatch.</p>
+        <h1 class="font-display font-extrabold text-5xl sm:text-6xl md:text-7xl leading-[.95] tracking-tight">Sound that<br>keeps up.</h1>
+        <p class="mt-6 text-mute max-w-md md:text-lg">Three everyday devices built for commutes, camping trips and long weeks, backed by an assistant that answers from the manual instead of guessing.</p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="#products" class="bg-bone text-ink font-medium px-6 py-3 rounded-full hover:bg-white transition">Shop the range</a>
+          <a href="#support" class="bg-pulse hover:bg-rose-500 text-white font-medium px-6 py-3 rounded-full transition">Try the AI assistant</a>
+        </div>
+        <ul class="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-xs text-mute"><li>1-year warranty</li><li>Free setup help</li><li>Serial-based RMA</li></ul>
+      </div>
+      <!-- chat teaser -->
+      <a href="#support" class="block bg-panel border border-line rounded-3xl p-5 chatglow hover:-translate-y-1 transition max-w-md lg:ml-auto w-full" aria-label="Open the AI support assistant">
+        <div class="flex items-center gap-3 pb-3 border-b border-line"><span class="h-9 w-9 rounded-full bg-pulse grid place-items-center font-display font-extrabold">P</span><div><p class="text-sm font-medium">PulseWave AI Support</p><p class="text-xs text-mute">Answers only from product manuals</p></div></div>
+        <div class="mt-4 space-y-3 text-sm">
+          <p class="ml-auto w-fit max-w-[85%] bg-pulse text-white rounded-2xl px-3.5 py-2.5">How do I link two Stone Spark speakers?</p>
+          <p class="w-fit max-w-[90%] bg-ink border border-line rounded-2xl px-3.5 py-2.5">Power both on, then long-press the Bluetooth/TWS button on one speaker and wait for the sync chime.<span class="block mt-2 pt-2 border-t border-line text-xs text-mute">Sources: Stone Spark Manual, 3.3 TWS Pairing</span></p>
+        </div>
+        <p class="mt-4 text-xs text-pulse font-medium">Ask your own question ↓</p>
+      </a>
+    </div>
+    <div id="wave" class="max-w-4xl mx-auto px-5 h-24 md:h-32 flex items-center justify-between gap-1" aria-hidden="true"></div>
+  </section>
+
+  <!-- Products -->
+  <section id="products" class="max-w-6xl mx-auto px-5 py-16 md:py-24">
+    <h2 class="font-display font-extrabold text-3xl md:text-4xl tracking-tight">Pick your PulseWave</h2>
+    <p class="text-mute mt-2">Three products, one support assistant. Prices are sample values for this demo.</p>
+    <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-5">
+      <article class="bg-panel border border-line hover:border-lav/60 transition rounded-3xl p-6 flex flex-col">
+        <span class="text-xs text-lav font-medium">Earbuds</span>
+        <svg class="w-full h-36 text-lav mt-2" aria-hidden="true"><use href="#buds"/></svg>
+        <h3 class="font-display font-extrabold text-2xl mt-3">Airdopes Apex</h3>
+        <p class="text-mute text-sm mt-1">Graphene drivers, 4-mic ENx call clarity and a 40 ms Beast Mode for gaming.</p>
+        <ul class="mt-4 flex flex-wrap gap-2 text-xs text-bone/90 flex-1 content-start"><li class="px-2.5 py-1 rounded-full bg-ink border border-line">40 h with case</li><li class="px-2.5 py-1 rounded-full bg-ink border border-line">Dual pairing</li><li class="px-2.5 py-1 rounded-full bg-ink border border-line">IPX4</li></ul>
+        <div class="mt-6 flex items-center justify-between"><span class="font-display font-extrabold text-xl">₹2,499</span><div class="flex gap-2"><a href="#support" data-ask="apex" class="text-sm border border-pulse/60 text-pulse hover:bg-pulse hover:text-white px-3.5 py-2 rounded-full transition">Ask AI</a><a href="#" class="text-sm bg-bone text-ink px-4 py-2 rounded-full hover:bg-white transition">Buy</a></div></div>
+      </article>
+      <article class="bg-panel border border-line hover:border-pulse/60 transition rounded-3xl p-6 flex flex-col">
+        <span class="text-xs text-pulse font-medium">Portable speaker</span>
+        <svg class="w-full h-36 text-pulse mt-2" aria-hidden="true"><use href="#speaker"/></svg>
+        <h3 class="font-display font-extrabold text-2xl mt-3">Stone Spark</h3>
+        <p class="text-mute text-sm mt-1">20 W, 360-degree sound with RGB lighting, pairable in stereo with a second unit.</p>
+        <ul class="mt-4 flex flex-wrap gap-2 text-xs text-bone/90 flex-1 content-start"><li class="px-2.5 py-1 rounded-full bg-ink border border-line">IPX7 waterproof</li><li class="px-2.5 py-1 rounded-full bg-ink border border-line">12 h playback</li><li class="px-2.5 py-1 rounded-full bg-ink border border-line">TWS + microSD</li></ul>
+        <div class="mt-6 flex items-center justify-between"><span class="font-display font-extrabold text-xl">₹2,999</span><div class="flex gap-2"><a href="#support" data-ask="spark" class="text-sm border border-pulse/60 text-pulse hover:bg-pulse hover:text-white px-3.5 py-2 rounded-full transition">Ask AI</a><a href="#" class="text-sm bg-bone text-ink px-4 py-2 rounded-full hover:bg-white transition">Buy</a></div></div>
+      </article>
+      <article class="bg-panel border border-line hover:border-lav/60 transition rounded-3xl p-6 flex flex-col">
+        <span class="text-xs text-lav font-medium">Smartwatch</span>
+        <svg class="w-full h-36 text-bone mt-2" aria-hidden="true"><use href="#watch"/></svg>
+        <h3 class="font-display font-extrabold text-2xl mt-3">StormCall Plus</h3>
+        <p class="text-mute text-sm mt-1">1.85-inch AMOLED, Bluetooth calling, heart rate, SpO2 and over 100 sport modes.</p>
+        <ul class="mt-4 flex flex-wrap gap-2 text-xs text-bone/90 flex-1 content-start"><li class="px-2.5 py-1 rounded-full bg-ink border border-line">7-day battery</li><li class="px-2.5 py-1 rounded-full bg-ink border border-line">IP68</li><li class="px-2.5 py-1 rounded-full bg-ink border border-line">Emergency SOS</li></ul>
+        <div class="mt-6 flex items-center justify-between"><span class="font-display font-extrabold text-xl">₹3,999</span><div class="flex gap-2"><a href="#support" data-ask="storm" class="text-sm border border-pulse/60 text-pulse hover:bg-pulse hover:text-white px-3.5 py-2 rounded-full transition">Ask AI</a><a href="#" class="text-sm bg-bone text-ink px-4 py-2 rounded-full hover:bg-white transition">Buy</a></div></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Why -->
+  <section id="why" class="border-y border-line bg-panel/40">
+    <div class="max-w-6xl mx-auto px-5 py-16 grid grid-cols-1 md:grid-cols-3 gap-10">
+      <div><h3 class="font-display font-extrabold text-2xl">Built for real weather</h3><p class="text-mute mt-2 text-sm leading-relaxed">Sweat-proof earbuds, a speaker that survives a dip in the pool and a watch rated for 1.5 metres of fresh water.</p></div>
+      <div><h3 class="font-display font-extrabold text-2xl">Power that lasts</h3><p class="text-mute mt-2 text-sm leading-relaxed">Ten minutes in the Apex case gives about 3 hours of listening, and the StormCall Plus runs up to a week between charges.</p></div>
+      <div><h3 class="font-display font-extrabold text-2xl">Help that does not guess</h3><p class="text-mute mt-2 text-sm leading-relaxed">Our assistant reads the official manuals, shows the section it used and says so when it does not know.</p></div>
+    </div>
+  </section>
+
+  <!-- Support / Chat (hero of the project) -->
+  <section id="support" class="relative glow border-b border-line">
+    <div class="max-w-6xl mx-auto px-5 py-16 md:py-24">
+      <div class="text-center max-w-2xl mx-auto">
+        <p class="inline-flex items-center gap-2 text-xs font-medium text-pulse border border-pulse/40 rounded-full px-3 py-1"><span class="h-1.5 w-1.5 rounded-full bg-pulse"></span>The heart of this project</p>
+        <h2 class="font-display font-extrabold text-4xl md:text-6xl tracking-tight mt-4 leading-none">Meet PulseWave AI Support</h2>
+        <p class="text-mute mt-4 md:text-lg">Pick a product and ask about setup, troubleshooting, warranty or returns. Every answer comes from that product's manual, with the source shown.</p>
+      </div>
+
+      <div class="mt-8 flex flex-wrap justify-center gap-2" role="group" aria-label="Choose a product">
+        <button type="button" class="tab text-sm border border-line rounded-full px-4 py-2 transition" data-p="apex" aria-pressed="true">Airdopes Apex</button>
+        <button type="button" class="tab text-sm border border-line rounded-full px-4 py-2 transition" data-p="spark" aria-pressed="false">Stone Spark</button>
+        <button type="button" class="tab text-sm border border-line rounded-full px-4 py-2 transition" data-p="storm" aria-pressed="false">StormCall Plus</button>
+      </div>
+
+      <div class="mt-6 grid lg:grid-cols-3 gap-6 items-start">
+        <div class="lg:col-span-2 bg-panel rounded-3xl chatglow flex flex-col h-[640px] overflow-hidden">
+          <div class="flex items-center justify-between px-4 py-3 border-b border-line text-xs text-mute">
+            <span id="status" class="flex items-center gap-1.5" role="status"><span id="status-dot" class="h-2 w-2 rounded-full bg-mute"></span><span id="status-text">Checking API…</span></span>
+            <div class="flex items-center gap-4">
+              <button id="clear-btn" type="button" class="hover:text-bone underline underline-offset-2">Clear chat</button>
+            </div>
+          </div>
+          <div id="chat-container" class="flex-1 overflow-y-auto p-4 md:p-6 space-y-4" aria-live="polite"></div>
+          <div id="loading-indicator" class="hidden px-6 py-2 text-xs text-mute flex items-center gap-2">
+            <span class="flex gap-1"><span class="dot h-1.5 w-1.5 bg-pulse rounded-full"></span><span class="dot h-1.5 w-1.5 bg-pulse rounded-full"></span><span class="dot h-1.5 w-1.5 bg-pulse rounded-full"></span></span>Searching product manuals…
+          </div>
+          <div id="chips" class="px-4 pt-3 flex flex-wrap gap-2 border-t border-line"></div>
+          <div class="p-4 pt-3">
+            <form id="chat-form" class="flex gap-2">
+              <label for="user-input" class="sr-only">Your question</label>
+              <input type="text" id="user-input" maxlength="500" autocomplete="off" class="flex-1 min-w-0 bg-ink border border-line rounded-full px-5 py-3.5 text-sm placeholder-mute">
+              <button id="send-btn" type="submit" class="bg-pulse hover:bg-rose-500 disabled:opacity-50 disabled:cursor-not-allowed text-white px-7 py-3.5 rounded-full text-sm font-medium transition shrink-0">Send</button>
+            </form>
+          </div>
+        </div>
+
+        <aside class="space-y-4 text-sm">
+          <div class="bg-panel border border-line rounded-2xl p-5"><h3 class="font-display font-extrabold text-lg">Manual-grounded</h3><p class="text-mute mt-1 leading-relaxed">Answers use passages retrieved from the three product manuals. If nothing relevant is found, it says so instead of inventing steps.</p></div>
+          <div class="bg-panel border border-line rounded-2xl p-5"><h3 class="font-display font-extrabold text-lg">Warranty and RMA</h3><p class="text-mute mt-1 leading-relaxed">Include a serial number to check warranty dates or open a return ticket. Try: <button type="button" data-q="Check warranty for PW-APX-10001" class="text-pulse hover:underline text-left">Check warranty for PW-APX-10001</button></p></div>
+          <div class="bg-panel border border-line rounded-2xl p-5"><h3 class="font-display font-extrabold text-lg">Private by design</h3><p class="text-mute mt-1 leading-relaxed">Lookups return product and warranty dates only. Customer details are never shown.</p></div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="border-t border-line">
+  <div class="max-w-6xl mx-auto px-5 py-8 flex flex-col sm:flex-row justify-between gap-3 text-xs text-mute">
+    <span>© 2026 PulseWave. Demo brand created for a portfolio project, not a real store.</span>
+    <a href="#project" class="hover:text-bone">About this project ↓</a>
+  </div>
+</footer>
+
+<!-- ============ PART 2: PROJECT DETAILS ============ -->
+<section id="project" class="bg-bone text-ink">
+  <div class="max-w-5xl mx-auto px-5 py-16 md:py-24">
+    <p class="text-sm font-medium text-slate-500">Everything above is a demo. Here is how it works.</p>
+    <h2 class="font-display font-extrabold text-4xl md:text-6xl tracking-tight mt-3 leading-none">PulseWave AI Support</h2>
+    <p class="mt-5 text-lg text-slate-700 max-w-2xl leading-relaxed">A customer support and RMA assistant for three products that answers only from their manuals, so customers get verifiable help instead of generic or invented steps.</p>
+
+    <div class="mt-8 flex flex-wrap gap-3 text-sm">
+      <a href="#support" class="bg-pulse text-white px-5 py-2.5 rounded-full hover:bg-rose-500 transition">Try the live assistant</a>
+      <a href="https://github.com/YOUR-USERNAME/pulsewave-ai-support" target="_blank" rel="noopener" class="bg-ink text-bone px-5 py-2.5 rounded-full hover:bg-black transition">View source on GitHub</a>
+      <a href="https://www.linkedin.com/in/YOUR-PROFILE" target="_blank" rel="noopener" class="border border-slate-400 px-5 py-2.5 rounded-full hover:bg-white transition">LinkedIn</a>
+      <a href="YOUR-RESUME.pdf" class="border border-slate-400 px-5 py-2.5 rounded-full hover:bg-white transition">Resume</a>
+    </div>
+
+    <div class="mt-14 grid md:grid-cols-3 gap-8">
+      <div>
+        <h3 class="font-display font-extrabold text-2xl">About me</h3>
+        <p class="mt-2 text-sm text-slate-700 leading-relaxed">Hi, I am <strong>YOUR NAME</strong>, an embedded systems engineer moving into AI engineering. I build things that must work reliably on constrained hardware, and I brought that mindset here: small footprint, clear failure states, no guessing.</p>
+      </div>
+      <div class="md:col-span-2 grid sm:grid-cols-2 gap-4 text-sm">
+        <div class="bg-white rounded-2xl p-5 border border-slate-200"><h4 class="font-medium">The problem</h4><p class="text-slate-600 mt-1 leading-relaxed">Support bots give generic answers, and plain LLMs invent features or unsafe troubleshooting steps.</p></div>
+        <div class="bg-white rounded-2xl p-5 border border-slate-200"><h4 class="font-medium">The approach</h4><p class="text-slate-600 mt-1 leading-relaxed">Retrieve passages from the real manuals, answer only from them, and cite the source.</p></div>
+      </div>
+    </div>
+
+    <h3 class="font-display font-extrabold text-2xl mt-16">One knowledge base, three products</h3>
+    <div class="mt-5 grid md:grid-cols-3 gap-4 text-sm">
+      <div class="bg-white rounded-2xl p-5 border border-slate-200"><h4 class="font-medium">Airdopes Apex</h4><p class="text-slate-600 mt-1 leading-relaxed">Earbuds manual: pairing, touch controls, Beast Mode, care, reset and RMA.</p></div>
+      <div class="bg-white rounded-2xl p-5 border border-slate-200"><h4 class="font-medium">Stone Spark</h4><p class="text-slate-600 mt-1 leading-relaxed">Speaker manual: TWS, AUX and microSD modes, IPX7 rules, reset and RMA.</p></div>
+      <div class="bg-white rounded-2xl p-5 border border-slate-200"><h4 class="font-medium">StormCall Plus</h4><p class="text-slate-600 mt-1 leading-relaxed">Smartwatch manual: app binding, calling, health sensors, restart, reset and RMA.</p></div>
+    </div>
+    <p class="mt-3 text-sm text-slate-600 max-w-2xl leading-relaxed">All three manuals share the same seven-chapter structure and are embedded into one pgvector collection, so a single question can be matched to the right product and section.</p>
+
+    <h3 class="font-display font-extrabold text-2xl mt-16">How a question becomes an answer</h3>
+    <ol class="mt-5 grid grid-cols-1 md:grid-cols-5 gap-3 text-sm">
+      <li class="bg-white rounded-2xl p-4 border border-slate-200"><strong class="block mb-1">1. Question</strong><span class="text-slate-600">Browser posts JSON to <code>/chat</code>.</span></li>
+      <li class="bg-white rounded-2xl p-4 border border-slate-200"><strong class="block mb-1">2. Embed</strong><span class="text-slate-600">FastEmbed creates a vector locally.</span></li>
+      <li class="bg-white rounded-2xl p-4 border border-slate-200"><strong class="block mb-1">3. Retrieve</strong><span class="text-slate-600">pgvector returns the closest manual passages.</span></li>
+      <li class="bg-white rounded-2xl p-4 border border-slate-200"><strong class="block mb-1">4. Guard</strong><span class="text-slate-600">LangGraph checks context. No match means no guess.</span></li>
+      <li class="bg-white rounded-2xl p-4 border border-slate-200"><strong class="block mb-1">5. Answer</strong><span class="text-slate-600">Gemini Flash replies from that context with sources.</span></li>
+    </ol>
+    <p class="mt-3 text-sm text-slate-600 max-w-3xl leading-relaxed">Messages that contain a serial number skip the manuals and go to the warranty and RMA records instead. A ticket is only created when the order ID matches.</p>
+
+    <h3 class="font-display font-extrabold text-2xl mt-16">Engineering decisions</h3>
+    <div class="mt-5 grid md:grid-cols-2 gap-4 text-sm">
+      <div class="bg-white rounded-2xl p-5 border border-slate-200"><h4 class="font-medium">Grounded retrieval, not model memory</h4><p class="text-slate-600 mt-1 leading-relaxed">RAG over Supabase pgvector ties answers to manufacturer manuals.</p></div>
+      <div class="bg-white rounded-2xl p-5 border border-slate-200"><h4 class="font-medium">Decoupled API</h4><p class="text-slate-600 mt-1 leading-relaxed">A typed FastAPI <code>/chat</code> endpoint can be tested alone or plugged into a CRM or ticketing system.</p></div>
+      <div class="bg-white rounded-2xl p-5 border border-slate-200"><h4 class="font-medium">Graceful failure</h4><p class="text-slate-600 mt-1 leading-relaxed">HTTP 429, timeouts and offline servers each get a clear message and a retry button.</p></div>
+      <div class="bg-white rounded-2xl p-5 border border-slate-200"><h4 class="font-medium">Lean footprint</h4><p class="text-slate-600 mt-1 leading-relaxed">Local FastEmbed baked into the Docker image avoids slow cold starts and keeps memory low.</p></div>
+      <div class="bg-white rounded-2xl p-5 border border-slate-200"><h4 class="font-medium">Verifiable answers</h4><p class="text-slate-600 mt-1 leading-relaxed">Each reply lists the manual sections it used.</p></div>
+      <div class="bg-white rounded-2xl p-5 border border-slate-200"><h4 class="font-medium">Safe by default</h4><p class="text-slate-600 mt-1 leading-relaxed">Output is rendered as text, never HTML. Record tables use row level security and return no customer data.</p></div>
+    </div>
+
+    <h3 class="font-display font-extrabold text-2xl mt-16">Tech stack</h3>
+    <ul class="mt-4 flex flex-wrap gap-2 text-sm">
+      <li class="px-3 py-1.5 rounded-full bg-ink text-bone">FastAPI</li><li class="px-3 py-1.5 rounded-full bg-ink text-bone">LangGraph</li><li class="px-3 py-1.5 rounded-full bg-ink text-bone">Supabase pgvector</li><li class="px-3 py-1.5 rounded-full bg-ink text-bone">FastEmbed</li><li class="px-3 py-1.5 rounded-full bg-ink text-bone">Gemini Flash</li><li class="px-3 py-1.5 rounded-full bg-ink text-bone">Docker</li><li class="px-3 py-1.5 rounded-full bg-ink text-bone">Tailwind CSS</li><li class="px-3 py-1.5 rounded-full bg-ink text-bone">Vanilla JS</li>
+    </ul>
+
+    <h3 class="font-display font-extrabold text-2xl mt-16">Next improvements</h3>
+    <p class="mt-3 text-sm text-slate-700 max-w-2xl leading-relaxed">An evaluation set to measure answer accuracy, response streaming, multi-turn memory using the session id, and warranty lookup and RMA ticket creation as full agent tools.</p>
+  </div>
+</section>
+
+<a id="fab" href="#support" class="fixed bottom-5 right-5 z-40 bg-pulse hover:bg-rose-500 text-white font-medium text-sm pl-4 pr-5 py-3 rounded-full shadow-2xl shadow-pulse/30 flex items-center gap-2 transition">
+  <span class="relative flex h-2.5 w-2.5"><span class="ping absolute h-full w-full rounded-full bg-white/80"></span><span class="relative h-2.5 w-2.5 rounded-full bg-white"></span></span>Ask AI Support</a>
+
+<script>
+const API_URL='/chat', HEALTH_URL='/health', TIMEOUT_MS=30000;
+const SESSION_ID=(crypto.randomUUID?crypto.randomUUID():String(Date.now()));
+const $=id=>document.getElementById(id);
+const chat=$('chat-container'),form=$('chat-form'),input=$('user-input'),loader=$('loading-indicator'),sendBtn=$('send-btn');
+let lastQuestion='',product='apex';
+
+const PRODUCTS={
+ apex:{name:'Airdopes Apex',chips:['How do I pair my Airdopes Apex?','Only one earbud is playing audio','How do I factory reset?','What is Beast Mode?']},
+ spark:{name:'Stone Spark',chips:['How do I link two Stone Spark speakers?','My microSD card will not play','Is Stone Spark waterproof?','How do I factory reset?']},
+ storm:{name:'StormCall Plus',chips:['How do I pair StormCall Plus?','Battery drains too fast','My heart rate reading looks wrong','How do I factory reset?']}
+};
+// Gemini often returns markdown (**bold**, # headings). Show plain text instead.
+function clean(t){return String(t).replace(/\*\*(.+?)\*\*/gs,'$1').replace(/__(.+?)__/gs,'$1').replace(/^#{1,6}\s+/gm,'').replace(/`([^`]+)`/g,'$1').replace(/^\s*[*-]\s+/gm,'• ').replace(/\*\*/g,'');}
+function el(t,c,x){const e=document.createElement(t);if(c)e.className=c;if(x)e.textContent=x;return e;}
+function addMessage(role,text,opts={}){
+  const row=el('div','flex '+(role==='user'?'justify-end':'justify-start'));
+  const styles={user:'bg-pulse text-white',bot:'bg-ink border border-line text-bone',error:'bg-rose-950/80 border border-rose-800/60 text-rose-200'};
+  const bubble=el('div',styles[role]+' p-3.5 rounded-2xl max-w-[85%] md:max-w-lg text-sm leading-relaxed whitespace-pre-wrap');
+  bubble.textContent=role==='bot'?clean(text):text;
+  if(opts.sources&&opts.sources.length){const s=el('div','mt-3 pt-2 border-t border-line text-xs text-mute whitespace-normal');s.append(el('span','text-bone','Sources: '),document.createTextNode(opts.sources.join('; ')));bubble.append(s);}
+  if(opts.retry){const b=el('button','mt-3 block text-xs bg-rose-900 hover:bg-rose-800 px-3 py-1.5 rounded-md','Retry');b.type='button';b.onclick=()=>{row.remove();ask(lastQuestion,true);};bubble.append(b);}
+  row.append(bubble);chat.append(row);chat.scrollTop=chat.scrollHeight;
+}
+function greet(){addMessage('bot','Hi, I am the PulseWave support assistant for Airdopes Apex, Stone Spark and StormCall Plus. I answer only from the official manuals and show which section I used. Choose a product above or ask anything below.');}
+function setBusy(b){loader.classList.toggle('hidden',!b);sendBtn.disabled=b;input.disabled=b;if(!b)input.focus({preventScroll:true});}
+function setStatus(s,l){const c={ok:'bg-emerald-500',down:'bg-rose-500'};$('status-dot').className='h-2 w-2 rounded-full '+(c[s]||'bg-mute');$('status-text').textContent=l;}
+async function checkHealth(){
+  try{const r=await fetch(HEALTH_URL);r.ok?setStatus('ok','API online'):setStatus('down','API error');}catch{setStatus('down','API offline');}
+}
+async function ask(text,isRetry=false){
+  lastQuestion=text;if(!isRetry)addMessage('user',text);setBusy(true);
+  const ctrl=new AbortController(),timer=setTimeout(()=>ctrl.abort(),TIMEOUT_MS);
+  try{
+    const res=await fetch(API_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({message:text,session_id:SESSION_ID}),signal:ctrl.signal});
+    if(res.status===429)throw new Error('The AI model is rate limited (HTTP 429). Wait a few seconds, then retry.');
+    if(!res.ok)throw new Error(`The server returned an error (status ${res.status}). Retry in a moment.`);
+    const data=await res.json();
+    const sources=(data.sources||[]).map(s=>typeof s==='string'?s:(s.title||s.source||s.name)).filter(Boolean);
+    addMessage('bot',data.reply||data.response||'The server returned an empty answer.',{sources});
+    setStatus('ok','API online');
+  }catch(err){
+    const msg=err.name==='AbortError'?'The request timed out after 30 seconds. Retry, or ask a shorter question.':(err instanceof TypeError?'Cannot reach the server. Please try again in a moment.':err.message);
+    if(err instanceof TypeError)setStatus('down','API offline');
+    addMessage('error','⚠️ '+msg,{retry:true});
+  }finally{clearTimeout(timer);setBusy(false);}
+}
+const wave=$('wave');
+for(let i=0;i<48;i++){const b=document.createElement('span');b.className='bar flex-1 rounded-full '+(i%7===0?'bg-pulse':'bg-lav/70');b.style.height=(30+Math.abs(Math.sin(i*.55))*70)+'%';b.style.animationDelay=(i*0.05)+'s';wave.append(b);}
+function setProduct(p){
+  product=p;const P=PRODUCTS[p];
+  document.querySelectorAll('.tab').forEach(t=>t.setAttribute('aria-pressed',String(t.dataset.p===p)));
+  input.placeholder='e.g. '+P.chips[0];
+  $('chips').replaceChildren();
+  P.chips.forEach(q=>{const b=el('button','text-xs bg-ink hover:bg-line border border-line text-mute hover:text-bone px-3 py-1.5 rounded-full transition',q);b.type='button';b.onclick=()=>{if(!sendBtn.disabled)ask(q);};$('chips').append(b);});
+}
+document.querySelectorAll('.tab').forEach(t=>t.onclick=()=>setProduct(t.dataset.p));
+document.querySelectorAll('[data-ask]').forEach(a=>a.addEventListener('click',()=>setProduct(a.dataset.ask)));
+document.querySelectorAll('[data-q]').forEach(b=>b.onclick=()=>{if(!sendBtn.disabled)ask(b.dataset.q);});
+form.addEventListener('submit',e=>{e.preventDefault();const t=input.value.trim();if(!t||sendBtn.disabled)return;input.value='';ask(t);});
+$('clear-btn').onclick=()=>{chat.replaceChildren();greet();};
+// hide floating button while the chat section is on screen
+new IntersectionObserver(([e])=>$('fab').classList.toggle('hidden',e.isIntersecting),{threshold:.15}).observe($('support'));
+setProduct('apex');greet();checkHealth();
+</script>
+</body>
+</html>
