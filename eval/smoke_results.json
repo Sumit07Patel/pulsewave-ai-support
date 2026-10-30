@@ -1,0 +1,20 @@
+{
+  "target": "http://127.0.0.1:8000",
+  "run_at": "2026-10-30T23:33:31+00:00",
+  "passed": 77,
+  "failed": 0,
+  "warnings": 3,
+  "failures": [],
+  "latency": {
+    "records": {
+      "n": 54,
+      "median_s": 0.17,
+      "p95_s": 0.35
+    },
+    "manual": {
+      "n": 28,
+      "median_s": 1.92,
+      "p95_s": 2.5
+    }
+  }
+}

@@ -1,4 +1,6 @@
-"""LangGraph pipeline: retrieve manual passages -> guard -> answer from context only.
+"""LangGraph pipeline.
+  - Questions about the customer's own records (serial / order / ticket) -> deterministic CRM node
+  - Everything else -> retrieve manual passages (filtered to one product when it is known) -> guard -> answer
 Free-tier hardening: backup model, and a manual-excerpt answer if every LLM call fails."""
 import logging
 import os
@@ -18,6 +20,14 @@ from app import crm
 
 load_dotenv()
 log = logging.getLogger("pulsewave")
+# Python drops INFO messages unless a handler and level are set, and uvicorn only configures its own loggers.
+# Without this, the "best_distance" lines used to calibrate MAX_DISTANCE would never appear in the terminal.
+if not log.handlers:
+    _h = logging.StreamHandler()
+    _h.setFormatter(logging.Formatter("%(asctime)s %(levelname)s %(name)s: %(message)s"))
+    log.addHandler(_h)
+log.setLevel(os.getenv("LOG_LEVEL", "INFO").upper())
+log.propagate = False
 
 # ---------- Configuration ----------
 CONNECTION_STRING = os.environ.get("SUPABASE_DB_URL")
@@ -36,6 +46,18 @@ TOP_K = int(os.getenv("TOP_K", "4"))
 MAX_DISTANCE = float(os.environ["MAX_DISTANCE"]) if os.getenv("MAX_DISTANCE") else None
 SEP = "\n\n---\n\n"
 
+# Manual keys = lower-cased file names used at ingestion (AirdopesApex.txt -> "airdopesapex").
+# Aliases are matched against the message with spaces and punctuation removed.
+PRODUCT_ALIASES = {
+    "airdopesapex": ("airdopesapex", "apex"),
+    "stonespark": ("stonespark",),
+    "stormcallplus": ("stormcallplus", "stormcall"),
+}
+
+# Once the manual is chosen by the metadata filter, the product name in the question only dilutes the
+# embedding match (eval: hit@4 97% -> 100%, MRR 0.89 -> 0.97 on the 30-question set), so it is dropped from the search text.
+_NAME_RE = re.compile(r"\b(airdopes\s*apex|stone\s*spark|stormcall\s*plus|stormcall|apex)\b", re.I)
+
 NO_ANSWER = ("I could not find this in the PulseWave product manuals, so I will not guess. "
              "Please contact PulseWave support for further help.")
 
@@ -45,6 +67,7 @@ class State(TypedDict):
     context: str
     sources: list[str]
     grounded: bool
+    product: str | None  # manual key used to filter retrieval, if known
     mode: str            # "ai" | "excerpt" | "no_match" | "crm"
 
 
@@ -77,7 +100,7 @@ def _source_label(meta: dict) -> str | None:
     if not name:
         return None
     label = os.path.basename(str(name))
-    if re.match(r"^tmp\w*", label):          # temp-file names from ingestion are not meaningful
+    if re.match(r"^tmp\w*", label):          # temp-file names from old ingestion runs are not meaningful
         return None
     page = meta.get("page")
     return f"{label}, p.{int(page) + 1}" if isinstance(page, int) else label
@@ -89,10 +112,32 @@ def _excerpt(context: str) -> str:
     return "The AI writer is busy right now, so here are the most relevant passages straight from the manual:\n\n" + body
 
 
+def _detect_product(messages) -> str | None:
+    """Which manual is the customer asking about? Product name in the recent chat wins,
+    otherwise the product behind a serial number they gave earlier."""
+    for text in crm.recent_user_texts(messages, 4):
+        norm = re.sub(r"[^a-z0-9]", "", text.lower())
+        for key, aliases in PRODUCT_ALIASES.items():
+            if any(a in norm for a in aliases):
+                return key
+    serial = crm.latest_serial(messages)
+    return crm.manual_for_serial(serial) if serial and crm.enabled() else None
+
+
 # ---------- Nodes ----------
 def retrieve_node(state: State):
     query = state["messages"][-1].content
-    results = vectorstore.similarity_search_with_score(query, k=TOP_K)
+    product = _detect_product(state["messages"])
+    search_kwargs = {"filter": {"product": {"$eq": product}}} if product else {}
+
+    search_text = query
+    if product:
+        stripped = " ".join(_NAME_RE.sub(" ", query).split())
+        search_text = stripped or query          # never search with an empty string
+    results = vectorstore.similarity_search_with_score(search_text, k=TOP_K, **search_kwargs)
+    if results:
+        # Use these logs to pick MAX_DISTANCE: compare in-scope vs out-of-scope questions.
+        log.info("retrieve product=%s best_distance=%.3f", product, results[0][1])
     if MAX_DISTANCE is not None:
         results = [(d, s) for d, s in results if s <= MAX_DISTANCE]
 
@@ -105,7 +150,8 @@ def retrieve_node(state: State):
     if docs and not sources:
         sources = ["PulseWave product manual"]
 
-    return {"context": SEP.join(d.page_content for d in docs), "sources": sources, "grounded": bool(docs)}
+    return {"context": SEP.join(d.page_content for d in docs), "sources": sources,
+            "grounded": bool(docs), "product": product}
 
 
 def route_after_retrieve(state: State) -> str:
@@ -126,12 +172,12 @@ def fallback_node(state: State):
 
 
 def route_start(state: State) -> str:
-    # A serial number in the message goes to the warranty records, everything else to the manuals.
-    return "crm" if crm.enabled() and crm.find_serial(state["messages"][-1].content) else "retrieve"
+    # Serial / order / ticket IDs, or "my warranty"-style questions, go to the customer's records.
+    return "crm" if crm.wants_crm(state["messages"]) else "retrieve"
 
 
 def crm_node(state: State):
-    reply = crm.handle(state["messages"][-1].content)
+    reply = crm.handle(state["messages"])
     return {"messages": [AIMessage(content=reply)], "sources": ["PulseWave warranty records"], "mode": "crm"}
 
 

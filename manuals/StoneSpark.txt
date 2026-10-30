@@ -1,0 +1,259 @@
+CHAPTER 1: PRODUCT OVERVIEW & UNBOXING
+
+1.1 Package Contents
+Carefully inspect the retail package before breaking the security seal. The Stone Spark box includes:
+
+* 1 x Stone Spark Portable Wireless Speaker
+* 1 x Braided USB-A to Type-C Charging Cable (50 cm length)
+* 1 x 3.5mm Auxiliary Audio Cable (AUX)
+* 1 x Heavy-Duty Nylon Lanyard / Carrying Strap
+* 1 x User & Diagnostic Manual
+* 1 x Warranty Card & Brand Catalog
+
+1.2 Speaker Component Breakdown (Body & Ports)
+The Stone Spark features a rugged, cylindrical acoustic chamber designed for 360-degree sound dispersion and outdoor durability:
+
+* Acoustic Fabric Mesh: A tightly woven, splash-resistant textile wrap covering the main body, protecting the internal active drivers from dust and debris.
+* Dual Passive Radiators: Exposed aluminum vibrating plates located on the left and right circular ends of the speaker. These resonate with internal air pressure to deliver deep, punchy bass without requiring additional battery power.
+* Anti-Slip Silicone Base: A flattened rubberized strip running along the bottom chassis, ensuring the speaker remains stable on flat surfaces and dampening desk vibrations at maximum volume.
+* Waterproof I/O Flap: A thick, tethered rubber seal located on the lower rear panel. This flap must be firmly pressed closed to maintain the speaker's water resistance.
+* Connectivity Ports (Under Flap):
+* Type-C Charging Port: Supports standard 5V/2A power input.
+* 3.5mm AUX-In Port: For wired audio connections to laptops, MP3 players, or older smartphones.
+* MicroSD (TF) Card Slot: Supports memory cards up to 32GB for standalone local MP3 playback.
+
+
+* Lanyard Anchor Point: A reinforced plastic loop on the upper rear spine for attaching the included nylon strap, allowing the speaker to be hung from backpacks or tents.
+
+1.3 Control Panel Anatomy
+The primary control interface is situated along the top rubberized strip of the speaker for easy access:
+
+* Power / Light Mode Button: A multi-function button. Long-press to power the device on or off. Short-press to cycle through the integrated RGB LED ring lighting effects.
+* Bluetooth / TWS Button: Used to trigger manual Bluetooth pairing. Long-pressing this button links two separate Stone Spark speakers together to form a True Wireless Stereo (TWS) Left/Right channel array.
+* Play / Pause Button: Controls media playback. Can also be used to answer or end incoming cellular calls routed through the speaker's built-in microphone.
+* Plus (+) Button: Short-press to increase volume. Long-press for 2 seconds to skip to the Next Track.
+* Minus (-) Button: Short-press to decrease volume. Long-press for 2 seconds to return to the Previous Track.
+* LED Status Indicator Ring: A circular LED array surrounding the Power button. It displays blinking blue for pairing mode, solid blue for connected, and flashes red when the battery drops below 15 percent.
+
+CHAPTER 2: TECHNICAL SPECIFICATIONS
+
+2.1 Audio Architecture
+
+* Speaker Drivers: Dual 50mm full-range active drivers
+* Audio Output Power: 20W RMS (10W x 2)
+* Bass Enhancement: Dual opposing aluminum passive radiators
+* Frequency Response: 60Hz to 20,000Hz
+* Signal-to-Noise Ratio (SNR): Greater than or equal to 80dB
+* Distortion Threshold: Less than 1 percent at 70 percent volume
+* Integrated Microphone: Omnidirectional electret condenser for hands-free calling
+
+2.2 Connectivity and Wireless
+
+* Bluetooth Version: v5.3
+* Supported Profiles: A2DP 1.3, AVRCP 1.6, HFP 1.7
+* Wireless Range: 15 meters (49 feet) without obstacles
+* Multi-Speaker Sync: True Wireless Stereo (TWS) supported (pair two Stone Spark units for dedicated Left/Right channel audio)
+* Wired Audio Input: 3.5mm Auxiliary (AUX)
+* Local Media Playback: MicroSD / TF Card slot (supports up to 32GB, MP3/WAV formats)
+
+2.3 Battery and Power Delivery
+
+* Battery Cell Type: Rechargeable Lithium-Ion
+* Battery Capacity: 4000mAh (3.7V)
+* Music Playback Time: Up to 12 hours at 60 percent volume with LEDs turned off; up to 8 hours with LEDs active
+* Talk Time: Up to 15 hours
+* Charging Interface: Type-C USB
+* Power Input Rating: 5V/2A
+* Total Charge Time: Approximately 3.5 hours from 0 to 100 percent
+* Auto-Power Off: Device powers down after 15 minutes of Bluetooth disconnection or inactivity to preserve battery
+
+2.4 Physical and Environmental Limits
+
+* Dimensions: 185mm (length) x 75mm (diameter)
+* Total Weight: 520 grams
+* Outer Shell Material: High-density ABS plastic and tightly woven acoustic fabric mesh
+* Water and Dust Resistance: IPX7 (fully waterproof; capable of surviving submersion in 1 meter of water for up to 30 minutes)
+* Operating Temperature: -5 degrees Celsius to 45 degrees Celsius (23 degrees Fahrenheit to 113 degrees Fahrenheit)
+
+
+CHAPTER 3: FIRST-TIME SETUP & PAIRING
+
+3.1 Initial Preparation
+
+* Lift the waterproof rubber flap on the rear of the speaker and connect the Type-C cable to the charging port.
+* Plug the other end into a standard 5V/2A wall adapter and charge the speaker fully before first use (approximately 3.5 hours).
+* Disconnect the charging cable and firmly press the waterproof flap back into place, smoothing the edges to ensure IPX7 waterproof integrity.
+
+3.2 Standard Bluetooth Pairing
+
+* Step 1: Press and hold the Power button on the top control panel for 3 seconds. The speaker will power on with an audible startup chime.
+* Step 2: The LED ring around the Power button will begin flashing blue rapidly, indicating the speaker has automatically entered Bluetooth pairing mode.
+* Step 3: Open the Bluetooth settings menu on your smartphone, tablet, or PC, and ensure Bluetooth is toggled ON.
+* Step 4: Scan for new devices and select "Stone Spark" from the available list.
+* Step 5: A connection chime will play, and the LED ring will change to a solid blue light. The speaker is now ready for audio playback.
+
+3.3 True Wireless Stereo (TWS) Pairing
+If you own two Stone Spark speakers, you can link them together to create a wide stereo soundstage with dedicated Left and Right channels.
+
+* Step 1: Power on both Stone Spark speakers simultaneously. Ensure neither speaker is currently connected to your phone's Bluetooth. If they are, disconnect them from your phone first.
+* Step 2: Long-press the Bluetooth/TWS button on Speaker A (which will act as the primary/master speaker).
+* Step 3: A TWS search prompt will play. After 3 to 5 seconds, both speakers will emit a synchronization chime, confirming they are linked. The LED on Speaker A will flash blue, while Speaker B's LED will remain solid blue.
+* Step 4: Open your device's Bluetooth menu and pair to "Stone Spark". Both speakers will now output synchronized stereo audio from your single device.
+
+3.4 Auxiliary (AUX) Mode Setup
+
+* Lift the waterproof flap and insert the included 3.5mm AUX cable into the AUX-In port.
+* Connect the other end of the cable to your audio source (laptop, smartphone, etc.).
+* The speaker will automatically detect the wired connection and switch from Bluetooth to AUX mode. The LED indicator will turn solid green.
+* Note: Media playback controls (play/pause/skip) must be managed from the source device when in AUX mode, though the speaker's physical plus and minus buttons will still adjust the master volume.
+
+3.5 MicroSD (TF) Card Playback
+
+* Ensure your MicroSD card (maximum 32GB capacity) is formatted to FAT32 and loaded with MP3 or WAV audio files.
+* Insert the card into the MicroSD slot under the waterproof flap until it clicks into place.
+* The speaker will automatically switch to local playback mode and begin playing the first track in the root directory. Use the physical buttons on the speaker to skip tracks and adjust volume.
+
+
+CHAPTER 4: CONTROLS & FEATURES
+
+4.1 Media and Volume Navigation
+All media playback can be controlled directly from the rubberized top panel without needing to access your connected smartphone.
+
+* Play or Pause: Single-press the Play/Pause button to toggle audio playback.
+* Volume Up: Single-press the Plus (+) button. A subtle beep will sound when maximum volume is reached.
+* Volume Down: Single-press the Minus (-) button.
+* Next Track: Press and hold the Plus (+) button for 2 seconds.
+* Previous Track: Press and hold the Minus (-) button for 2 seconds.
+
+4.2 Hands-Free Call Management
+The Stone Spark features an integrated omnidirectional microphone, allowing it to function as a loud speakerphone during active Bluetooth connections.
+
+* Answer an Incoming Call: Single-press the Play/Pause button.
+* End an Active Call: Single-press the Play/Pause button again.
+* Reject an Incoming Call: Press and hold the Play/Pause button for 2 seconds until the rejection tone plays.
+* Redial Last Number: Double-press the Play/Pause button quickly to automatically call the last dialed number in your phone's call history.
+* Microphone Etiquette: For the best voice clarity during calls, ensure the speaker is placed on a flat surface within 1 meter (3 feet) of your mouth.
+
+4.3 Dynamic RGB Lighting Modes
+The LED ring around the power button and the hidden LEDs behind the acoustic fabric mesh provide visual ambiance synced to your music.
+
+* Cycle Light Modes: Single-press the Power button to cycle through the available lighting profiles: Pulsing Color Sync, Breathing Single Color, Circular Spin, and Solid Glow.
+* Disable Lighting: Cycle through the profiles until the lights turn completely off. Disabling the RGB lights is highly recommended to extend battery life, increasing playback time from 8 hours to approximately 12 hours.
+
+4.4 Source Mode Switching
+The speaker can seamlessly transition between different audio inputs.
+
+* By default, powering on the speaker places it in Bluetooth mode.
+* If a MicroSD card or AUX cable is inserted, the speaker automatically prioritizes that physical connection.
+* To manually toggle between active sources (e.g., switching from the inserted MicroSD card back to Bluetooth without removing the card), double-press the Power button. A voice prompt will announce the active mode ("Bluetooth Mode", "AUX Mode", or "TF Card Mode").
+
+4.5 Voice Assistant Integration
+You can trigger your smartphone's native AI assistant directly from the speaker.
+
+* Activation: Press and hold the Play/Pause button for 3 seconds until you hear the assistant activation chime (Siri or Google Assistant).
+* Speak your command clearly toward the speaker's microphone. The assistant's verbal response will be routed through the speaker drivers.
+
+CHAPTER 5: CARE, MAINTENANCE & SAFETY
+
+5.1 Cleaning the Acoustic Fabric
+
+* The tightly woven fabric exterior is durable but can trap dirt, sand, or mud during outdoor use. Use a soft, dry bristle brush to gently sweep away loose debris.
+* For stubborn stains or dried mud, dampen a microfiber cloth with mild soapy water and gently dab the affected area. Never use harsh chemical solvents, bleach, or abrasive sponges.
+* Rinse the fabric gently under a slow stream of fresh water (ensuring the rear port flap is sealed tight) and let it air dry completely in a well-ventilated room. Do not use a hairdryer or place the speaker near a heater to dry.
+
+5.2 Battery Preservation
+
+* To maintain the optimal health of the internal 4000mAh lithium-ion battery, avoid draining the speaker to 0 percent repeatedly. Charge the device when the LED indicator flashes red (around 15 percent battery remaining).
+* Use only standard 5V/2A power adapters. Using high-voltage fast-charging laptop bricks or non-certified cables can cause the power management integrated circuit to overheat, permanently reducing battery capacity over time.
+* Do not charge the speaker while it is wet or sitting in a damp environment. Ensure the Type-C port is bone dry before inserting any charging cable.
+
+5.3 IPX7 Waterproof Limitations and Guidelines
+
+* The Stone Spark is IPX7 certified, meaning it can survive complete submersion in up to 1 meter (3.3 feet) of fresh water for a maximum of 30 minutes. It is entirely safe to use by the pool, in the shower, or in heavy rain.
+* CRITICAL REQUIREMENT: The waterproof rating is completely void if the rear rubber I/O flap is not fully sealed. You must press the flap firmly into the chassis until it is flush to prevent water from flooding the internal motherboard and battery housing.
+* Saltwater and Chlorine: The IPX7 rating applies strictly to fresh water. If the speaker falls into a chlorinated pool or the ocean, immediately rinse it thoroughly with fresh tap water to prevent the chemical or salt residue from corroding the fabric mesh and degrading the rubber seals.
+
+5.4 Safe Storage and Transportation
+
+* When packing the speaker in a bag or suitcase, avoid placing heavy or sharp objects directly against the exposed aluminum passive radiators on the left and right ends of the cylinder, as they can be easily dented or punctured.
+* Do not leave the speaker inside a parked car during hot weather. Internal vehicle temperatures can exceed 60 degrees Celsius (140 degrees Fahrenheit), which poses a severe fire hazard for the lithium battery and can melt the internal waterproof adhesives.
+* Use the included nylon lanyard to secure the speaker to a backpack or tent hook, ensuring it does not accidentally roll off elevated surfaces and suffer impact damage.
+
+CHAPTER 6: TROUBLESHOOTING & RESET
+
+6.1 Connectivity and Pairing Issues
+
+Issue: Cannot locate "Stone Spark" in your device's Bluetooth menu.
+Solution: Ensure the speaker is powered on and the LED ring is flashing blue. If it is solid blue, the speaker is already connected to another device. Disconnect from the active device or short-press the Bluetooth button to manually force pairing mode.
+
+Issue: True Wireless Stereo (TWS) pairing is failing between two Stone Spark speakers.
+Solution: Ensure both speakers are completely disconnected from your phone's Bluetooth before attempting to link them. Power both off, turn them back on, and long-press the Bluetooth button on only ONE speaker. Wait up to 5 seconds for the synchronization chime before reconnecting your phone.
+
+Issue: Audio is stuttering, skipping, or dropping out during playback.
+Solution: The Bluetooth signal is likely experiencing interference or distance degradation. Ensure your source device is within 15 meters (49 feet) of the speaker with a clear line of sight. Move the speaker away from high-interference sources like Wi-Fi routers, microwaves, or thick metallic structures.
+
+6.2 Audio and Playback Malfunctions
+
+Issue: The speaker is connected, but no sound is playing.
+Solution: Check the volume levels on both your source device and the speaker itself (press the Plus button repeatedly). If you are using a wired AUX connection, ensure the 3.5mm cable is pushed entirely into both ports until it clicks.
+
+Issue: Audio sounds distorted, crackling, or heavily muffled.
+Solution: If playing heavy bass tracks at 100 percent volume, slight distortion can occur depending on the source file quality; reduce the volume to 85 percent. If the speaker was recently submerged in water, water droplets may be temporarily clogging the acoustic mesh. Shake the speaker gently to clear the mesh and let it dry in a well-ventilated area.
+
+Issue: MicroSD card is inserted, but music will not play.
+Solution: Verify the MicroSD card capacity is 32GB or smaller. The system cannot read high-capacity 64GB+ SDXC cards. Ensure the card is formatted to FAT32 via your computer, and verify that the audio files are in standard MP3 or WAV format placed in the root directory (not hidden inside complex folders).
+
+6.3 Charging and Power Failures
+
+Issue: The speaker will not power on despite long-pressing the power button.
+Solution: The battery is likely completely depleted. Connect the speaker to a reliable 5V/2A wall adapter and wait at least 15 minutes before attempting to power it on again.
+
+Issue: The speaker is not charging when plugged in (no LED indicator).
+Solution: Inspect the Type-C port under the rear rubber flap for trapped dirt, sand, or lint. Clean it out carefully with a wooden toothpick. Try using a different Type-C cable and a different wall adapter to rule out a faulty accessory. Ensure you are not using a high-voltage laptop charger.
+
+6.4 Hard Factory Reset Procedure
+If the speaker becomes completely unresponsive, buttons stop registering, or it suffers from persistent Bluetooth caching errors, perform a hard hardware reset.
+
+Step 1: Remove any inserted AUX cables or MicroSD cards, and unplug the charging cable.
+Step 2: On your smartphone or laptop, open the Bluetooth menu and select "Forget" or "Unpair" for the Stone Spark. Turn off your phone's Bluetooth temporarily.
+Step 3: Power the speaker on.
+Step 4: Press and hold the Power button AND the Play/Pause button simultaneously for exactly 8 seconds.
+Step 5: The LED indicator ring will flash red three times rapidly, followed by a system shutdown chime, and the speaker will turn off.
+Step 6: The internal cache has now been wiped. Press and hold the Power button to turn the speaker back on; it will automatically enter a fresh pairing state.
+
+CHAPTER 7: WARRANTY & RMA POLICY
+
+7.1 Warranty Coverage & Terms
+
+* Standard Warranty Period: The Stone Spark comes with a 1-Year (12-Month) Limited Manufacturer Warranty from the original date of purchase by the end user.
+* Eligibility Requirements: A valid invoice or authorized proof of purchase showing the date, retailer details, and item description is mandatory to claim warranty benefits.
+* Scope of Coverage:
+* Hardware defects in materials and manufacturing workmanship under standard consumer usage.
+* Blown active drivers or rattling passive radiators occurring under normal playback conditions without visible physical puncture.
+* Premature lithium battery failure, defined as retaining less than 60 percent of rated capacity within the warranty period under normal charge cycles.
+* Defective buttons or malfunctioning Type-C charging ports not caused by physical debris or electrical surges.
+
+
+
+7.2 Warranty Exclusions & Void Criteria
+The warranty is strictly null and void under the following conditions:
+
+* Physical or Mechanical Damage: Punctured acoustic fabric, crushed aluminum passive radiators, or snapped lanyard loops resulting from drops, impacts, or neglect.
+* Liquid Ingress & Corrosion: Water damage resulting from the rear I/O flap being left open or unsecured during liquid exposure. Corrosion from saltwater, chlorine, or chemical solvents.
+* Electrical Overstress: Motherboard burnouts caused by non-compliant high-voltage chargers, faulty third-party cables, or electrical surges.
+* Unauthorized Tampering: Any attempt to disassemble the cylindrical casing, repair internal components, or cut the acoustic mesh by non-authorized personnel.
+* Normal Cosmetic Wear: Fraying of the acoustic fabric, scuffs on the rubberized base, or cosmetic fading from prolonged UV/sunlight exposure.
+
+7.3 Locating Your Serial Number
+The serial number is required for verifying warranty status and generating a Return Merchandise Authorization (RMA) ticket.
+
+* Location on Hardware: Open the waterproof rubber flap on the rear of the speaker. The serial number is laser-printed on the internal plastic chassis just below the Type-C charging port.
+* Format: PW-SPK- followed by a five-digit unit number (Example: PW-SPK-40001).
+* Alternative Placement: The serial number is also printed on the barcode label attached to the bottom panel of the original retail box.
+
+7.4 Return Merchandise Authorization (RMA) Workflow
+Step 1: Perform the Hard Factory Reset detailed in Chapter 6.4 to ensure the issue is not a software glitch.
+Step 2: Contact Customer Support or invoke the AI Support Agent, providing your product model ("Stone Spark"), your serial number (for example PW-SPK-40001) and the order ID shown on your invoice (for example ORD-100520).
+Step 3: Once the serial number is verified under active warranty, the system will generate an official RMA ticket number (formatted as RMA-YYMM-XXXXXX, for example RMA-2610-A1B2C3). You can ask the AI Support Agent for the status of your ticket at any time.
+Step 4: Package the speaker and the original Type-C charging cable in protective padding. Include a slip of paper with your RMA ticket number inside the parcel.
+Step 5: Hand over the package to the assigned courier partner or bring it to an authorized walk-in service center. Following functional inspection and verification of zero physical or liquid damage (including flap seal integrity), an approved ticket qualifies for a repaired unit or brand-new replacement.

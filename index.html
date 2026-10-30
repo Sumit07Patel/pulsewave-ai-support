@@ -5,6 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PulseWave | Earbuds, speaker and smartwatch with AI support</title>
 <meta name="description" content="PulseWave demo store with an AI support assistant that answers only from the manuals of Airdopes Apex, Stone Spark and StormCall Plus. Portfolio project: FastAPI, LangGraph, Supabase pgvector, FastEmbed, Gemini Flash.">
+<link rel="canonical" href="https://pulsewave-ai-support.onrender.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="PulseWave AI Support">
+<meta property="og:description" content="Customer support and RMA assistant that answers from product manuals and warranty records. FastAPI, LangGraph, Supabase pgvector, Gemini.">
+<meta property="og:url" content="https://pulsewave-ai-support.onrender.com/">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
@@ -20,6 +25,8 @@
   .chatglow{box-shadow:0 0 0 1px rgba(255,77,109,.35),0 30px 80px -20px rgba(255,77,109,.35),0 0 120px -30px rgba(142,140,255,.4)}
   #chat-container::-webkit-scrollbar{width:6px}#chat-container::-webkit-scrollbar-thumb{background:#262C45;border-radius:3px}
   a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #FF4D6D;outline-offset:2px}
+  .jump[aria-current=true]{background:#FF4D6D;color:#fff}
+  #support,#project{scroll-margin-top:4.5rem}
   .tab[aria-pressed=true]{background:#FF4D6D;border-color:#FF4D6D;color:#fff}
   @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 </style>
@@ -58,8 +65,11 @@
       <li><a class="hover:text-bone transition" href="#why">Why PulseWave</a></li>
       <li><a class="hover:text-bone transition" href="#project">About this project</a></li>
     </ul>
-    <a href="#support" class="bg-pulse hover:bg-rose-500 text-white text-sm font-medium pl-3 pr-4 py-2 rounded-full transition flex items-center gap-2">
-      <span class="relative flex h-2 w-2"><span class="ping absolute inline-flex h-full w-full rounded-full bg-white/80"></span><span class="relative h-2 w-2 rounded-full bg-white"></span></span>Ask AI Support</a>
+    <div class="flex items-center rounded-full border border-line bg-panel p-0.5 text-sm font-medium" role="group" aria-label="Jump to">
+      <a id="jump-ai" href="#support" aria-current="false" class="jump px-3.5 sm:px-4 py-1.5 rounded-full text-mute hover:text-bone transition flex items-center gap-2">
+        <span class="relative hidden sm:flex h-2 w-2"><span class="ping absolute inline-flex h-full w-full rounded-full bg-white/80"></span><span class="relative h-2 w-2 rounded-full bg-white"></span></span>Ask AI</a>
+      <a id="jump-about" href="#project" aria-current="false" class="jump px-3.5 sm:px-4 py-1.5 rounded-full text-mute hover:text-bone transition">About project</a>
+    </div>
   </nav>
 </header>
 
@@ -137,7 +147,7 @@
       <div class="text-center max-w-2xl mx-auto">
         <p class="inline-flex items-center gap-2 text-xs font-medium text-pulse border border-pulse/40 rounded-full px-3 py-1"><span class="h-1.5 w-1.5 rounded-full bg-pulse"></span>The heart of this project</p>
         <h2 class="font-display font-extrabold text-4xl md:text-6xl tracking-tight mt-4 leading-none">Meet PulseWave AI Support</h2>
-        <p class="text-mute mt-4 md:text-lg">Pick a product and ask about setup, troubleshooting, warranty or returns. Every answer comes from that product's manual, with the source shown.</p>
+        <p class="text-mute mt-4 md:text-lg">Pick a product for suggested questions, then ask about setup, troubleshooting, warranty or returns. Manual answers show their source, and warranty questions are answered from the records.</p>
       </div>
 
       <div class="mt-8 flex flex-wrap justify-center gap-2" role="group" aria-label="Choose a product">
@@ -169,8 +179,14 @@
         </div>
 
         <aside class="space-y-4 text-sm">
-          <div class="bg-panel border border-line rounded-2xl p-5"><h3 class="font-display font-extrabold text-lg">Manual-grounded</h3><p class="text-mute mt-1 leading-relaxed">Answers use passages retrieved from the three product manuals. If nothing relevant is found, it says so instead of inventing steps.</p></div>
-          <div class="bg-panel border border-line rounded-2xl p-5"><h3 class="font-display font-extrabold text-lg">Warranty and RMA</h3><p class="text-mute mt-1 leading-relaxed">Include a serial number to check warranty dates or open a return ticket. Try: <button type="button" data-q="Check warranty for PW-APX-10001" class="text-pulse hover:underline text-left">Check warranty for PW-APX-10001</button></p></div>
+          <div class="bg-panel border border-line rounded-2xl p-5"><h3 class="font-display font-extrabold text-lg">Manual-grounded</h3><p class="text-mute mt-1 leading-relaxed">Answers use passages retrieved from the three product manuals. Name a product, or give a serial number, and the search is limited to that product's manual. If nothing relevant is found, it says so instead of inventing steps.</p></div>
+          <div class="bg-panel border border-line rounded-2xl p-5"><h3 class="font-display font-extrabold text-lg">Warranty and returns</h3><p class="text-mute mt-1 leading-relaxed">Ask about your warranty and I will request a serial number or order ID. A return needs both, and I collect them across messages. Try:</p>
+            <div class="mt-2 flex flex-col items-start gap-1">
+              <button type="button" data-q="Is my warranty active?" class="text-pulse hover:underline text-left">Is my warranty active?</button>
+              <button type="button" data-q="Check warranty for PW-APX-10001" class="text-pulse hover:underline text-left">Check warranty for PW-APX-10001</button>
+              <button type="button" data-q="I want to return my earbuds" class="text-pulse hover:underline text-left">I want to return my earbuds</button>
+            </div></div>
+          <div class="bg-panel border border-line rounded-2xl p-5"><h3 class="font-display font-extrabold text-lg">Remembers the chat</h3><p class="text-mute mt-1 leading-relaxed">Follow-ups such as "how do I reset it?" work because the last few messages are kept for 30 minutes. Clear chat starts a fresh session.</p></div>
           <div class="bg-panel border border-line rounded-2xl p-5"><h3 class="font-display font-extrabold text-lg">Private by design</h3><p class="text-mute mt-1 leading-relaxed">Lookups return product and warranty dates only. Customer details are never shown.</p></div>
         </aside>
       </div>
@@ -181,7 +197,13 @@
 <footer class="border-t border-line">
   <div class="max-w-6xl mx-auto px-5 py-8 flex flex-col sm:flex-row justify-between gap-3 text-xs text-mute">
     <span>© 2026 PulseWave. Demo brand created for a portfolio project, not a real store.</span>
-    <a href="#project" class="hover:text-bone">About this project ↓</a>
+    <span class="flex flex-wrap gap-x-5 gap-y-1">
+      <a href="https://pulsewave-ai-support.onrender.com/" target="_blank" rel="noopener" class="hover:text-bone">Live demo</a>
+      <a href="https://github.com/Sumit07Patel/pulsewave-ai-support" target="_blank" rel="noopener" class="hover:text-bone">Source code</a>
+      <a href="https://github.com/Sumit07Patel" target="_blank" rel="noopener" class="hover:text-bone">GitHub</a>
+      <a href="https://www.linkedin.com/in/sumit-patel-87565b1b7/" target="_blank" rel="noopener" class="hover:text-bone">LinkedIn</a>
+      <a href="#project" class="hover:text-bone">About this project ↓</a>
+    </span>
   </div>
 </footer>
 
@@ -194,15 +216,15 @@
 
     <div class="mt-8 flex flex-wrap gap-3 text-sm">
       <a href="#support" class="bg-pulse text-white px-5 py-2.5 rounded-full hover:bg-rose-500 transition">Try the live assistant</a>
-      <a href="https://github.com/YOUR-USERNAME/pulsewave-ai-support" target="_blank" rel="noopener" class="bg-ink text-bone px-5 py-2.5 rounded-full hover:bg-black transition">View source on GitHub</a>
-      <a href="https://www.linkedin.com/in/YOUR-PROFILE" target="_blank" rel="noopener" class="border border-slate-400 px-5 py-2.5 rounded-full hover:bg-white transition">LinkedIn</a>
-      <a href="YOUR-RESUME.pdf" class="border border-slate-400 px-5 py-2.5 rounded-full hover:bg-white transition">Resume</a>
+      <a href="https://github.com/Sumit07Patel/pulsewave-ai-support" target="_blank" rel="noopener" class="bg-ink text-bone px-5 py-2.5 rounded-full hover:bg-black transition">View source on GitHub</a>
+      <a href="https://github.com/Sumit07Patel" target="_blank" rel="noopener" class="border border-slate-400 px-5 py-2.5 rounded-full hover:bg-white transition">GitHub profile</a>
+      <a href="https://www.linkedin.com/in/sumit-patel-87565b1b7/" target="_blank" rel="noopener" class="border border-slate-400 px-5 py-2.5 rounded-full hover:bg-white transition">LinkedIn</a>
     </div>
 
     <div class="mt-14 grid md:grid-cols-3 gap-8">
       <div>
         <h3 class="font-display font-extrabold text-2xl">About me</h3>
-        <p class="mt-2 text-sm text-slate-700 leading-relaxed">Hi, I am <strong>YOUR NAME</strong>, an embedded systems engineer moving into AI engineering. I build things that must work reliably on constrained hardware, and I brought that mindset here: small footprint, clear failure states, no guessing.</p>
+        <p class="mt-2 text-sm text-slate-700 leading-relaxed">Hi, I am <strong>Sumit Patel</strong>, an embedded systems engineer moving into AI engineering. I build things that must work reliably on constrained hardware, and I brought that mindset here: small footprint, clear failure states, no guessing.</p>
       </div>
       <div class="md:col-span-2 grid sm:grid-cols-2 gap-4 text-sm">
         <div class="bg-white rounded-2xl p-5 border border-slate-200"><h4 class="font-medium">The problem</h4><p class="text-slate-600 mt-1 leading-relaxed">Support bots give generic answers, and plain LLMs invent features or unsafe troubleshooting steps.</p></div>
@@ -216,35 +238,51 @@
       <div class="bg-white rounded-2xl p-5 border border-slate-200"><h4 class="font-medium">Stone Spark</h4><p class="text-slate-600 mt-1 leading-relaxed">Speaker manual: TWS, AUX and microSD modes, IPX7 rules, reset and RMA.</p></div>
       <div class="bg-white rounded-2xl p-5 border border-slate-200"><h4 class="font-medium">StormCall Plus</h4><p class="text-slate-600 mt-1 leading-relaxed">Smartwatch manual: app binding, calling, health sensors, restart, reset and RMA.</p></div>
     </div>
-    <p class="mt-3 text-sm text-slate-600 max-w-2xl leading-relaxed">All three manuals share the same seven-chapter structure and are embedded into one pgvector collection, so a single question can be matched to the right product and section.</p>
+    <p class="mt-3 text-sm text-slate-600 max-w-2xl leading-relaxed">All three manuals share the same seven-chapter structure. They are split into 88 chunks (27, 29 and 32 per manual) in one pgvector collection, and every chunk is tagged with its product so a search can be limited to one manual.</p>
 
     <h3 class="font-display font-extrabold text-2xl mt-16">How a question becomes an answer</h3>
     <ol class="mt-5 grid grid-cols-1 md:grid-cols-5 gap-3 text-sm">
-      <li class="bg-white rounded-2xl p-4 border border-slate-200"><strong class="block mb-1">1. Question</strong><span class="text-slate-600">Browser posts JSON to <code>/chat</code>.</span></li>
-      <li class="bg-white rounded-2xl p-4 border border-slate-200"><strong class="block mb-1">2. Embed</strong><span class="text-slate-600">FastEmbed creates a vector locally.</span></li>
-      <li class="bg-white rounded-2xl p-4 border border-slate-200"><strong class="block mb-1">3. Retrieve</strong><span class="text-slate-600">pgvector returns the closest manual passages.</span></li>
-      <li class="bg-white rounded-2xl p-4 border border-slate-200"><strong class="block mb-1">4. Guard</strong><span class="text-slate-600">LangGraph checks context. No match means no guess.</span></li>
-      <li class="bg-white rounded-2xl p-4 border border-slate-200"><strong class="block mb-1">5. Answer</strong><span class="text-slate-600">Gemini Flash replies from that context with sources.</span></li>
+      <li class="bg-white rounded-2xl p-4 border border-slate-200"><strong class="block mb-1">1. Question</strong><span class="text-slate-600">The browser posts JSON and a session id to <code>/chat</code>. The server adds the last few messages of that session.</span></li>
+      <li class="bg-white rounded-2xl p-4 border border-slate-200"><strong class="block mb-1">2. Route</strong><span class="text-slate-600">LangGraph sends serial, order and ticket IDs, or "my warranty" questions, to the records. Everything else goes to the manuals.</span></li>
+      <li class="bg-white rounded-2xl p-4 border border-slate-200"><strong class="block mb-1">3. Retrieve</strong><span class="text-slate-600">FastEmbed embeds the question locally. The pgvector search is limited to the product named in the chat or behind the serial number.</span></li>
+      <li class="bg-white rounded-2xl p-4 border border-slate-200"><strong class="block mb-1">4. Guard</strong><span class="text-slate-600">The prompt limits the model to the retrieved context and tells it to decline when the answer is missing. An optional distance threshold can also reject weak matches.</span></li>
+      <li class="bg-white rounded-2xl p-4 border border-slate-200"><strong class="block mb-1">5. Answer</strong><span class="text-slate-600">Gemini Flash replies with sources. A backup model runs if it fails, then plain manual excerpts.</span></li>
     </ol>
-    <p class="mt-3 text-sm text-slate-600 max-w-3xl leading-relaxed">Messages that contain a serial number skip the manuals and go to the warranty and RMA records instead. A ticket is only created when the order ID matches.</p>
+    <p class="mt-3 text-sm text-slate-600 max-w-3xl leading-relaxed">Warranty and return questions never reach the language model. Plain code reads the records, collects the serial number and order ID across messages, and opens a ticket only when both match and the warranty is active.</p>
+
+    <h3 class="font-display font-extrabold text-2xl mt-16">Results so far</h3>
+    <p class="mt-2 text-sm text-slate-600 max-w-3xl leading-relaxed">Measured on a hand-written set of 30 answerable and 8 out-of-scope questions across the three manuals (88 chunks). Retrieval is scored the way the app searches: limited to the product's manual, top 4 passages.</p>
+    <div class="mt-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+      <div class="bg-white rounded-2xl p-5 border border-slate-200"><p class="font-display font-extrabold text-3xl">97%</p><p class="text-slate-600 mt-1 leading-relaxed">The right passage was in the top 4 results (29 of 30 questions).</p></div>
+      <div class="bg-white rounded-2xl p-5 border border-slate-200"><p class="font-display font-extrabold text-3xl">83%</p><p class="text-slate-600 mt-1 leading-relaxed">The right passage ranked first. It was always in the top 8.</p></div>
+      <div class="bg-white rounded-2xl p-5 border border-slate-200"><p class="font-display font-extrabold text-3xl">100%</p><p class="text-slate-600 mt-1 leading-relaxed">Top-4 hit rate when the product name is dropped from the search text, which the app now does (mean reciprocal rank 0.97).</p></div>
+      <div class="bg-white rounded-2xl p-5 border border-slate-200"><p class="font-display font-extrabold text-3xl">23%</p><p class="text-slate-600 mt-1 leading-relaxed">Share of retrieved passages from the wrong manual without the product filter. This is why the filter exists.</p></div>
+      <div class="bg-white rounded-2xl p-5 border border-slate-200"><p class="font-display font-extrabold text-3xl">577 ms</p><p class="text-slate-600 mt-1 leading-relaxed">Median retrieval time (95th percentile 599 ms).</p></div>
+      <div class="bg-white rounded-2xl p-5 border border-slate-200"><p class="font-display font-extrabold text-3xl">0.18 s</p><p class="text-slate-600 mt-1 leading-relaxed">Median reply time for warranty and return questions, which use no model (95th percentile 0.58 s).</p></div>
+      <div class="bg-white rounded-2xl p-5 border border-slate-200"><p class="font-display font-extrabold text-3xl">77 / 77</p><p class="text-slate-600 mt-1 leading-relaxed">End-to-end checks passed: records, returns, routing, sessions, cache and safety.</p></div>
+      <div class="bg-white rounded-2xl p-5 border border-slate-200"><p class="font-display font-extrabold text-3xl">4 / 4</p><p class="text-slate-600 mt-1 leading-relaxed">Out-of-scope questions declined in the end-to-end run, such as weather and a poem.</p></div>
+    </div>
+    <p class="mt-3 text-sm text-slate-600 max-w-3xl leading-relaxed">What these numbers do not show: the question set is small and written by me, and a retrieval hit only proves the passage was found, not that the model's answer was correct. Model answers had a 95th-percentile time of about 5.6 s. Cost per query is not measured yet.</p>
 
     <h3 class="font-display font-extrabold text-2xl mt-16">Engineering decisions</h3>
     <div class="mt-5 grid md:grid-cols-2 gap-4 text-sm">
-      <div class="bg-white rounded-2xl p-5 border border-slate-200"><h4 class="font-medium">Grounded retrieval, not model memory</h4><p class="text-slate-600 mt-1 leading-relaxed">RAG over Supabase pgvector ties answers to manufacturer manuals.</p></div>
-      <div class="bg-white rounded-2xl p-5 border border-slate-200"><h4 class="font-medium">Decoupled API</h4><p class="text-slate-600 mt-1 leading-relaxed">A typed FastAPI <code>/chat</code> endpoint can be tested alone or plugged into a CRM or ticketing system.</p></div>
-      <div class="bg-white rounded-2xl p-5 border border-slate-200"><h4 class="font-medium">Graceful failure</h4><p class="text-slate-600 mt-1 leading-relaxed">HTTP 429, timeouts and offline servers each get a clear message and a retry button.</p></div>
-      <div class="bg-white rounded-2xl p-5 border border-slate-200"><h4 class="font-medium">Lean footprint</h4><p class="text-slate-600 mt-1 leading-relaxed">Local FastEmbed baked into the Docker image avoids slow cold starts and keeps memory low.</p></div>
-      <div class="bg-white rounded-2xl p-5 border border-slate-200"><h4 class="font-medium">Verifiable answers</h4><p class="text-slate-600 mt-1 leading-relaxed">Each reply lists the manual sections it used.</p></div>
+      <div class="bg-white rounded-2xl p-5 border border-slate-200"><h4 class="font-medium">Grounded retrieval, not model memory</h4><p class="text-slate-600 mt-1 leading-relaxed">RAG over Supabase pgvector ties answers to the manufacturer manuals, and each reply lists the source it used.</p></div>
+      <div class="bg-white rounded-2xl p-5 border border-slate-200"><h4 class="font-medium">Product-aware retrieval</h4><p class="text-slate-600 mt-1 leading-relaxed">Chunks carry a product tag, so asking about the Stone Spark cannot return passages from the Apex manual.</p></div>
+      <div class="bg-white rounded-2xl p-5 border border-slate-200"><h4 class="font-medium">Deterministic warranty and returns</h4><p class="text-slate-600 mt-1 leading-relaxed">No model decides who gets a ticket. A return needs a matching serial number and order ID, and each device can have one open ticket.</p></div>
+      <div class="bg-white rounded-2xl p-5 border border-slate-200"><h4 class="font-medium">Multi-turn sessions</h4><p class="text-slate-600 mt-1 leading-relaxed">The server keeps the last 8 messages per session for 30 minutes. They live in memory, so the demo runs on a single instance.</p></div>
+      <div class="bg-white rounded-2xl p-5 border border-slate-200"><h4 class="font-medium">Graceful failure</h4><p class="text-slate-600 mt-1 leading-relaxed">HTTP 429, timeouts and offline servers get a clear message and a retry button. If the main model fails, a backup model answers, then manual excerpts.</p></div>
+      <div class="bg-white rounded-2xl p-5 border border-slate-200"><h4 class="font-medium">Idempotent ingestion</h4><p class="text-slate-600 mt-1 leading-relaxed">Re-running ingestion replaces a manual's chunks instead of duplicating them, so repeats cannot crowd out relevant passages.</p></div>
+      <div class="bg-white rounded-2xl p-5 border border-slate-200"><h4 class="font-medium">Free-tier protection</h4><p class="text-slate-600 mt-1 leading-relaxed">First questions are cached for an hour, each IP is limited to 12 questions a minute, and local embeddings cost nothing per query. The free Gemini key allows 20 model requests a day, after which the app shows manual excerpts.</p></div>
       <div class="bg-white rounded-2xl p-5 border border-slate-200"><h4 class="font-medium">Safe by default</h4><p class="text-slate-600 mt-1 leading-relaxed">Output is rendered as text, never HTML. Record tables use row level security and return no customer data.</p></div>
     </div>
 
     <h3 class="font-display font-extrabold text-2xl mt-16">Tech stack</h3>
     <ul class="mt-4 flex flex-wrap gap-2 text-sm">
-      <li class="px-3 py-1.5 rounded-full bg-ink text-bone">FastAPI</li><li class="px-3 py-1.5 rounded-full bg-ink text-bone">LangGraph</li><li class="px-3 py-1.5 rounded-full bg-ink text-bone">Supabase pgvector</li><li class="px-3 py-1.5 rounded-full bg-ink text-bone">FastEmbed</li><li class="px-3 py-1.5 rounded-full bg-ink text-bone">Gemini Flash</li><li class="px-3 py-1.5 rounded-full bg-ink text-bone">Docker</li><li class="px-3 py-1.5 rounded-full bg-ink text-bone">Tailwind CSS</li><li class="px-3 py-1.5 rounded-full bg-ink text-bone">Vanilla JS</li>
+      <li class="px-3 py-1.5 rounded-full bg-ink text-bone">FastAPI</li><li class="px-3 py-1.5 rounded-full bg-ink text-bone">LangGraph</li><li class="px-3 py-1.5 rounded-full bg-ink text-bone">Supabase pgvector</li><li class="px-3 py-1.5 rounded-full bg-ink text-bone">FastEmbed</li><li class="px-3 py-1.5 rounded-full bg-ink text-bone">Gemini Flash</li><li class="px-3 py-1.5 rounded-full bg-ink text-bone">Docker</li><li class="px-3 py-1.5 rounded-full bg-ink text-bone">Render</li><li class="px-3 py-1.5 rounded-full bg-ink text-bone">Tailwind CSS</li><li class="px-3 py-1.5 rounded-full bg-ink text-bone">Vanilla JS</li>
     </ul>
 
     <h3 class="font-display font-extrabold text-2xl mt-16">Next improvements</h3>
-    <p class="mt-3 text-sm text-slate-700 max-w-2xl leading-relaxed">An evaluation set to measure answer accuracy, response streaming, multi-turn memory using the session id, and warranty lookup and RMA ticket creation as full agent tools.</p>
+    <p class="mt-3 text-sm text-slate-700 max-w-2xl leading-relaxed">Scoring the correctness of generated answers, not only retrieval, response streaming, sessions stored in the database so the app can run on several instances, and a stronger identity check for returns, such as the email registered at purchase.</p>
   </div>
 </section>
 
@@ -252,8 +290,12 @@
   <span class="relative flex h-2.5 w-2.5"><span class="ping absolute h-full w-full rounded-full bg-white/80"></span><span class="relative h-2.5 w-2.5 rounded-full bg-white"></span></span>Ask AI Support</a>
 
 <script>
-const API_URL='/chat', HEALTH_URL='/health', TIMEOUT_MS=30000;
-const SESSION_ID=(crypto.randomUUID?crypto.randomUUID():String(Date.now()));
+// 60 s: the free Render instance can need up to a minute to wake after sitting idle.
+const API_URL='/chat', HEALTH_URL='/health', TIMEOUT_MS=60000;
+// The session id is the server's memory key for this conversation. It is kept in memory only,
+// so a page reload or "Clear chat" starts a fresh conversation, matching what is on screen.
+function newSid(){return crypto.randomUUID?crypto.randomUUID():('s'+Date.now().toString(36)+Math.random().toString(36).slice(2,10));}
+let sessionId=newSid();
 const $=id=>document.getElementById(id);
 const chat=$('chat-container'),form=$('chat-form'),input=$('user-input'),loader=$('loading-indicator'),sendBtn=$('send-btn');
 let lastQuestion='',product='apex';
@@ -275,7 +317,7 @@ function addMessage(role,text,opts={}){
   if(opts.retry){const b=el('button','mt-3 block text-xs bg-rose-900 hover:bg-rose-800 px-3 py-1.5 rounded-md','Retry');b.type='button';b.onclick=()=>{row.remove();ask(lastQuestion,true);};bubble.append(b);}
   row.append(bubble);chat.append(row);chat.scrollTop=chat.scrollHeight;
 }
-function greet(){addMessage('bot','Hi, I am the PulseWave support assistant for Airdopes Apex, Stone Spark and StormCall Plus. I answer only from the official manuals and show which section I used. Choose a product above or ask anything below.');}
+function greet(){addMessage('bot','Hi, I am the PulseWave support assistant for Airdopes Apex, Stone Spark and StormCall Plus. I answer product questions only from the official manuals and show which section I used. I can also check your warranty or open a return if you give me a serial number or order ID. Choose a product above or ask anything below.');}
 function setBusy(b){loader.classList.toggle('hidden',!b);sendBtn.disabled=b;input.disabled=b;if(!b)input.focus({preventScroll:true});}
 function setStatus(s,l){const c={ok:'bg-emerald-500',down:'bg-rose-500'};$('status-dot').className='h-2 w-2 rounded-full '+(c[s]||'bg-mute');$('status-text').textContent=l;}
 async function checkHealth(){
@@ -285,15 +327,16 @@ async function ask(text,isRetry=false){
   lastQuestion=text;if(!isRetry)addMessage('user',text);setBusy(true);
   const ctrl=new AbortController(),timer=setTimeout(()=>ctrl.abort(),TIMEOUT_MS);
   try{
-    const res=await fetch(API_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({message:text,session_id:SESSION_ID}),signal:ctrl.signal});
+    const res=await fetch(API_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({message:text,session_id:sessionId}),signal:ctrl.signal});
     if(res.status===429)throw new Error('The AI model is rate limited (HTTP 429). Wait a few seconds, then retry.');
     if(!res.ok)throw new Error(`The server returned an error (status ${res.status}). Retry in a moment.`);
     const data=await res.json();
+    if(data.session_id)sessionId=data.session_id;
     const sources=(data.sources||[]).map(s=>typeof s==='string'?s:(s.title||s.source||s.name)).filter(Boolean);
     addMessage('bot',data.reply||data.response||'The server returned an empty answer.',{sources});
     setStatus('ok','API online');
   }catch(err){
-    const msg=err.name==='AbortError'?'The request timed out after 30 seconds. Retry, or ask a shorter question.':(err instanceof TypeError?'Cannot reach the server. Please try again in a moment.':err.message);
+    const msg=err.name==='AbortError'?`The request timed out after ${TIMEOUT_MS/1000} seconds. Retry, or ask a shorter question.`:(err instanceof TypeError?'Cannot reach the server. Please try again in a moment.':err.message);
     if(err instanceof TypeError)setStatus('down','API offline');
     addMessage('error','⚠️ '+msg,{retry:true});
   }finally{clearTimeout(timer);setBusy(false);}
@@ -311,10 +354,24 @@ document.querySelectorAll('.tab').forEach(t=>t.onclick=()=>setProduct(t.dataset.
 document.querySelectorAll('[data-ask]').forEach(a=>a.addEventListener('click',()=>setProduct(a.dataset.ask)));
 document.querySelectorAll('[data-q]').forEach(b=>b.onclick=()=>{if(!sendBtn.disabled)ask(b.dataset.q);});
 form.addEventListener('submit',e=>{e.preventDefault();const t=input.value.trim();if(!t||sendBtn.disabled)return;input.value='';ask(t);});
-$('clear-btn').onclick=()=>{chat.replaceChildren();greet();};
+$('clear-btn').onclick=()=>{sessionId=newSid();chat.replaceChildren();greet();};
 // hide floating button while the chat section is on screen
 new IntersectionObserver(([e])=>$('fab').classList.toggle('hidden',e.isIntersecting),{threshold:.15}).observe($('support'));
 setProduct('apex');greet();checkHealth();
+
+// Header switch: shows whether the visitor is at the assistant or the project description.
+(function(){
+  const ai=$('jump-ai'),about=$('jump-about'),sup=$('support'),proj=$('project');
+  let queued=false;
+  function mark(){
+    queued=false;
+    const h=window.innerHeight,p=proj.getBoundingClientRect(),q=sup.getBoundingClientRect();
+    const onAbout=p.top<h*0.5,onAi=!onAbout&&q.top<h*0.5&&q.bottom>h*0.25;
+    ai.setAttribute('aria-current',String(onAi));about.setAttribute('aria-current',String(onAbout));
+  }
+  addEventListener('scroll',()=>{if(!queued){queued=true;requestAnimationFrame(mark);}},{passive:true});
+  addEventListener('resize',mark);mark();
+})();
 </script>
 </body>
 </html>

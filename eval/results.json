@@ -1,0 +1,23 @@
+{
+  "k": 4,
+  "in_scope_questions": 30,
+  "out_of_scope_questions": 8,
+  "unfiltered_hit_rate": 0.967,
+  "unfiltered_right_product_hit_rate": 0.9,
+  "filtered_hit_rate": 0.967,
+  "filtered_hit_at": {
+    "1": 0.833,
+    "4": 0.967,
+    "8": 1.0,
+    "12": 1.0
+  },
+  "filtered_mean_reciprocal_rank": 0.893,
+  "filtered_name_removed_hit_rate": 1.0,
+  "filtered_name_removed_mrr": 0.967,
+  "wrong_product_share_of_unfiltered_results": 0.233,
+  "retrieval_latency_ms_median": 577.2,
+  "retrieval_latency_ms_p95": 599.4,
+  "answerable_questions_used_for_threshold": 30,
+  "max_best_distance_in_scope": 0.3755,
+  "min_best_distance_out_of_scope": 0.3528
+}

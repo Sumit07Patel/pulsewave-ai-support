@@ -1,0 +1,273 @@
+CHAPTER 1: PRODUCT OVERVIEW & UNBOXING
+
+1.1 Package Contents
+Carefully inspect the retail package before breaking the security seal. The Airdopes Apex box includes:
+
+* 1 x Pair of Airdopes Apex TWS Earbuds (Left and Right units)
+* 1 x Smart Charging Case with magnetic clamshell lid
+* 3 x Pairs of Ergonomic Silicone Ear Tips (Size M pre-installed on earbuds; Sizes S and L packaged in accessory tray)
+* 1 x Braided USB-A to Type-C Charging Cable (30 cm length, rated for 5V/2A)
+* 1 x User & Diagnostic Manual
+* 1 x Warranty Card & Brand Catalog
+
+1.2 Earbud Component Breakdown
+Each earbud features an ergonomic semi-in-ear stem design housing acoustic drivers, antenna arrays, and capacitive sensors:
+
+* Capacitive Touch Control (CTC) Zone: Located on the upper flat portion of the outer stem. Senses tap, double-tap, long-press, and swipe gestures for media playback, call routing, and mode switching.
+* Dual-Microphone Array:
+* Voice Mic: Positioned at the bottom tip of the stem, oriented toward the user's mouth for primary speech pickup.
+* ENx Environmental Mic: Positioned on the upper rear ridge of the stem; captures ambient external noise for real-time noise cancellation filtering.
+
+
+* In-Ear Optical Sensor: Located on the inner contour facing the ear canal. Automatically detects when an earbud is inserted or removed to handle auto-pause and auto-resume.
+* Acoustic Nozzle & Anti-Dust Filter: Angled 45-degree sound tube protected by a high-density metallic mesh screen to prevent earwax and debris ingress.
+* Magnetic Charging Contacts: Two 24K gold-plated recessed pogo-pin terminals located on the bottom base of the stem.
+* L/R Orientation Marking: Tactile embossed letters located on the inner neck of each earbud casing.
+* Micro-LED Status Indicator: Micro-perforation near the top of the outer stem displaying white, blue, and red light patterns for pairing status, battery warnings, and reset verification.
+
+1.3 Charging Case Anatomy
+The charging case serves as a portable battery reservoir, pairing trigger, and protective enclosure:
+
+* Hall-Effect Magnetic Lid: Equipped with Instant Wake N' Pair (IWP) magnetic switches. Opening the lid automatically powers on the earbuds and initiates Bluetooth polling before they are lifted from their cradles.
+* Magnetic Docking Wells: Deep-recessed docking bays with polarity-matched neodymium magnets that secure the earbuds and align the charging contacts automatically.
+* Quad-LED Battery Indicator (Front Panel): Four discrete white LEDs displaying case battery reserves:
+* 1 LED Solid: 1% to 25% remaining
+* 2 LEDs Solid: 26% to 50% remaining
+* 3 LEDs Solid: 51% to 75% remaining
+* 4 LEDs Solid: 76% to 100% remaining
+* 1 LED Flashing Rapidly: Critical low battery (under 5%); recharge immediately
+
+
+* Multifunction / Factory Reset Button: A flush-mounted tactile button located on the rear spine of the case. Used for manual Bluetooth discovery and full factory resets.
+* Type-C Fast-Charging Port: Centered on the bottom plate; supports 5V input.
+* Serial Number & Compliance Imprint: Laser-etched inside the recessed ceiling of the case lid. Formatted as PW-APX-NNNNN, for example PW-APX-10001 (required for all warranty verification and RMA tickets)
+
+
+CHAPTER 2: TECHNICAL SPECIFICATIONS
+
+2.1 Audio Architecture
+
+* Drivers: 10mm Graphene-coated dynamic drivers
+* Frequency Response: 20Hz to 20,000Hz
+* Impedance: 32 Ohms
+* Audio Codecs Supported: SBC (Subband Codec) and AAC (Advanced Audio Coding)
+* Latency: 40ms in Beast Mode (Gaming Mode); 150ms in Standard Mode
+* Microphone System: 4-Mic array (2 per earbud) featuring ENx Environmental Noise Cancellation algorithm
+
+2.2 Connectivity and Wireless
+
+* Bluetooth Chipset: BT v5.3 (Ultra-Low Energy)
+* Transmission Profiles: A2DP 1.3, AVRCP 1.6, HFP 1.7, HSP 1.2
+* Maximum Range: 10 meters (33 feet) with clear line of sight
+* Dual Pairing: Multi-point connectivity supported (connect up to 2 devices simultaneously)
+* Auto-Connect: Instant Wake N' Pair (IWP) triggers within 1.5 seconds of lid opening
+
+2.3 Battery and Power Delivery
+
+* Earbud Battery: 40mAh High-density Lithium-Polymer per earbud
+* Charging Case Battery: 400mAh Lithium-Polymer
+* Music Playback Time: Up to 10 hours on a single charge at 70 percent volume; 40 hours total with charging case
+* Talk Time: Up to 7 hours on a single charge
+* Charging Interface: Type-C USB (5V/2A input rating)
+* ASAP Charge Technology: 10 minutes of charging yields 180 minutes of playback
+* Full Charge Duration: 45 minutes for earbuds; 90 minutes for the case
+
+2.4 Physical and Environmental
+
+* Water and Dust Resistance: IPX4 rating (protection against sweat and light splashing water)
+* Weight: 3.8 grams per earbud; 42 grams for the charging case
+* Material: Polycarbonate (PC) and ABS plastic shell with matte finish
+* Operating Temperature: 0 to 45 degrees Celsius (32 to 113 degrees Fahrenheit)
+
+
+CHAPTER 3: FIRST-TIME SETUP & PAIRING
+
+3.1 Initial Preparation
+
+* Peel off the transparent isolation stickers from the magnetic charging pins on the bottom of both earbuds.
+* Place the earbuds back into the docking wells of the charging case and close the magnetic lid.
+* Connect the case to a 5V/2A power source using the provided Type-C cable. Allow the device to charge for at least 30 minutes before attempting to pair for the first time.
+
+3.2 Standard Bluetooth Pairing
+
+* Step 1: Open the lid of the charging case. Thanks to Instant Wake N' Pair (IWP) technology, the earbuds will automatically power on.
+* Step 2: Leave the earbuds inside the case for 3 seconds. The LED indicator on the master earbud will begin flashing blue and white rapidly, indicating it has entered Bluetooth discovery mode.
+* Step 3: Navigate to the Bluetooth settings on your smartphone, tablet, or PC and ensure Bluetooth is toggled ON.
+* Step 4: Scan for new devices and select "Airdopes Apex" from the list of available connections.
+* Step 5: A voice prompt saying "Connected" will play through the earbuds, and the LED indicators will turn off. You may now remove the earbuds from the case for use.
+
+3.3 Multi-Point Connection (Dual Pairing)
+The Airdopes Apex can connect to two distinct source devices simultaneously (e.g., a laptop for video calls and a smartphone for audio).
+
+* Step 1: Follow the standard pairing process to connect the earbuds to Device A (e.g., your laptop).
+* Step 2: Once connected, toggle the Bluetooth switch to OFF on Device A. The earbuds will automatically disconnect and re-enter pairing mode.
+* Step 3: Open the Bluetooth settings on Device B (e.g., your smartphone), scan for devices, and connect to "Airdopes Apex".
+* Step 4: Once Device B is successfully connected, turn the Bluetooth switch back ON for Device A.
+* Step 5: Manually select "Airdopes Apex" from the paired devices list on Device A. The earbuds are now actively bridged to both devices.
+
+3.4 Mono Mode (Single Earbud Usage)
+
+* To use a single earbud, simply open the charging case, remove either the Left or Right earbud, and close the lid.
+* The removed earbud will automatically pair with your previously connected device in Mono audio mode.
+* Seamless Transition: If you decide you want stereo sound, simply open the case and remove the second earbud. It will automatically power on, sync with the active earbud, and transition to Stereo mode without interrupting your audio playback.
+
+3.5 Forced Manual Pairing
+If the earbuds do not automatically enter pairing mode upon opening the lid:
+
+* Keep both earbuds inside the open case.
+* Press and hold the Multifunction Button on the back of the charging case for 3 seconds until the earbud LEDs flash blue.
+* Proceed with Step 3 of the Standard Bluetooth Pairing process.
+
+
+CHAPTER 4: CONTROLS & FEATURES
+
+4.1 Capacitive Touch Control (CTC) Matrix
+Both earbuds are equipped with high-sensitivity capacitive touch surfaces located on the upper stem. All tap and hold gestures register confirmation tones through the acoustic drivers.
+
+Music Playback:
+
+* Play / Pause: Single-tap the CTC on either the Left or Right earbud.
+* Next Track: Double-tap the CTC on the Right earbud.
+* Previous Track: Double-tap the CTC on the Left earbud.
+* Volume Up: Long-press the CTC on the Right earbud for 1.5 seconds.
+* Volume Down: Long-press the CTC on the Left earbud for 1.5 seconds.
+
+Call Management:
+
+* Answer Incoming Call: Single-tap the CTC on either earbud.
+* End Active Call: Single-tap the CTC on either earbud.
+* Reject Incoming Call: Long-press the CTC on either earbud for 2 seconds until a rejection tone sounds.
+* Switch Calls: Double-tap either earbud during an active call to place the current call on hold and switch to a second incoming call.
+
+Voice Assistant:
+
+* Activate Siri or Google Assistant: Triple-tap the CTC on the Left earbud. A confirmation chime will play through the earbuds, allowing you to speak commands directly into the microphone.
+
+Special Modes:
+
+* Beast Mode (Ultra-Low Latency): Triple-tap the CTC on the Right earbud. A voice prompt will announce "Beast Mode" upon activation and "Music Mode" upon returning to standard latency.
+
+4.2 Smart In-Ear Detection
+The Airdopes Apex features optical in-ear sensors that monitor ear canal proximity:
+
+* Auto-Pause: Removing either earbud from your ear immediately pauses active media playback.
+* Auto-Resume: Reinserting the earbud into your ear automatically resumes media playback from the exact pause point.
+* Sleep Timer: If an earbud remains removed from your ear and outside the charging case for more than 5 minutes without an active audio stream, it powers off automatically to preserve battery life.
+
+4.3 Beast Mode (Ultra-Low Latency Engine)
+
+* Latency Reduction: Activating Beast Mode drops audio latency down to 40 milliseconds by optimizing Bluetooth v5.3 transmission packets.
+* Recommended Use: Ideal for fast-paced mobile gaming (battle royale, first-person shooters) and high-framerate streaming where precise lip-sync accuracy is required.
+* Battery Impact: Operating in Beast Mode slightly increases chipset power draw, reducing single-session earbud playtime by approximately 10 to 15 percent.
+
+4.4 ENx Technology for Voice Calls
+
+* Automatic Engagement: ENx environmental noise cancellation activates automatically during regular cellular calls, VoIP applications (Zoom, Teams, WhatsApp), and voice assistant interactions.
+* Dual-Mic Filtering: The environmental microphone captures ambient room noise, traffic hum, and wind, while the integrated DSP inverts the ambient wave and isolates vocal frequencies picked up by the primary voice microphone.
+* Optimization Tip: For clear audio transmission in windy or noisy environments, ensure the lower stem tip points downward toward your mouth and is not covered by clothing or long hair.
+
+
+CHAPTER 5: CARE, MAINTENANCE & SAFETY
+
+5.1 Cleaning & Hygiene
+
+* Acoustic Nozzle: Routinely inspect the metallic mesh screen on the earbud nozzles. Use a soft, dry bristle brush to gently dislodge earwax and debris. Never use sharp objects, needles, or liquids on the mesh, as this will puncture the acoustic filter and permanently damage the dynamic driver.
+* Charging Contacts: Sweat and skin oils can coat the magnetic pogo-pin contacts, leading to charging failures. Wipe the two gold contacts on the bottom of each earbud stem using a dry cotton swab. For stubborn residue, lightly dampen the swab with 70 percent isopropyl alcohol, ensuring the contacts are completely dry before placing them back in the charging case.
+* Case Interior: Use a micro-fiber cloth to wipe the docking wells. Do not blow compressed air directly into the case, as this can force dust into the internal circuitry.
+
+5.2 Battery Preservation
+
+* To maximize the lifespan of the lithium-polymer battery cells, avoid letting the battery completely drain to 0 percent. Routinely recharge the earbuds when the low battery prompt is heard (usually at 20 percent).
+* Use only standard 5V/2A (10 Watt) charging adapters. High-voltage fast chargers (such as 30W or 65W laptop chargers) lacking smart-power negotiation can overheat the case circuitry and degrade the battery capacity prematurely.
+* Do not leave the earbuds or case in direct sunlight, on automotive dashboards, or in environments exceeding 45 degrees Celsius (113 degrees Fahrenheit), as extreme heat causes rapid battery cell expansion and chemical breakdown.
+
+5.3 IPX4 Water & Dust Resistance Limitations
+
+* The earbuds carry an IPX4 certification, meaning they are tested to withstand multi-directional splashing water, light rain, and human sweat during vigorous workouts.
+* The earbuds are NOT waterproof. They cannot withstand complete submersion, high-pressure water jets, showering, swimming, or sauna environments.
+* IMPORTANT: The smart charging case is NOT water-resistant. You must thoroughly dry the earbuds with a cloth before placing them into the charging case to prevent short-circuiting the docking wells and motherboard.
+
+5.4 Safety and Health Precautions
+
+* Hearing Conservation: Prolonged listening at volumes exceeding 85 decibels can cause permanent noise-induced hearing loss. It is recommended to utilize the 50/50 rule: listen at 50 percent volume for no more than 50 minutes consecutively.
+* Magnetic Interference: Both the earbuds and the charging case contain strong neodymium magnets. Maintain a safe distance of at least 15 cm (6 inches) between the earbuds or case and implanted medical devices, such as pacemakers or defibrillators.
+* Choking Hazard: The removable silicone ear tips and the earbuds themselves present a severe choking hazard for toddlers and small pets. Store the case securely out of reach when not in active use.
+
+
+CHAPTER 6: TROUBLESHOOTING & RESET
+
+6.1 Connectivity and Pairing Issues
+
+Issue: Your device cannot locate "Airdopes Apex" in the Bluetooth menu.
+Solution: Ensure the earbuds are not already connected to a previously paired device. Disable Bluetooth on nearby devices or perform the manual pairing sequence by pressing the case button for 3 seconds.
+
+Issue: Only one earbud is playing audio, or the earbuds are not syncing with each other.
+Solution: This indicates a Left/Right synchronization failure. Place both earbuds into the case, close the lid for 5 seconds, and reopen it. If the issue persists, follow the Hard Factory Reset procedure in Section 6.4.
+
+Issue: Audio is stuttering, skipping, or dropping out during playback.
+Solution: Bluetooth signal interference is likely occurring. Keep your audio source device in an unobstructed path (e.g., in a front pocket rather than a backpack). Move away from high-interference areas like heavy Wi-Fi router clusters, microwave ovens, or dense metallic structures.
+
+6.2 Audio and Sensor Malfunctions
+
+Issue: The volume is significantly lower in one earbud.
+Solution: In 90 percent of cases, this is caused by earwax buildup on the internal acoustic mesh filter. Refer to Chapter 5.1 for cleaning instructions. Additionally, check your smartphone's accessibility settings to ensure the Left/Right audio balance slider is perfectly centered.
+
+Issue: Audio pauses and resumes randomly while walking or chewing.
+Solution: The Smart In-Ear Detection optical sensor is losing contact with your skin. Try swapping to a larger size of silicone ear tips to ensure a tighter, deeper seal in your ear canal. Wipe the small optical sensor window on the inside of the earbud with a microfiber cloth.
+
+6.3 Charging and Power Failures
+
+Issue: An earbud does not light up or charge when placed in the case.
+Solution: First, confirm the charging case has battery power by checking the front LEDs. Next, firmly wipe the gold magnetic pins on both the earbud and the bottom of the case well with a dry cloth or cotton swab to remove sweat or oil barriers.
+
+Issue: The charging case is not accepting power from the wall outlet.
+Solution: Verify you are using a standard 5V/2A adapter. Try a different Type-C cable. Inspect the case's charging port with a flashlight for packed lint or debris and carefully remove it with a wooden toothpick.
+
+6.4 Hard Factory Reset Procedure
+If standard troubleshooting fails to resolve connectivity, audio imbalance, or software bugs, perform a complete system wipe.
+
+Step 1: On your smartphone, tablet, or PC, go to the Bluetooth menu, select "Airdopes Apex," and choose "Forget This Device" or "Unpair".
+Step 2: Turn off Bluetooth on your source device.
+Step 3: Place both earbuds firmly into the charging case and keep the lid OPEN.
+Step 4: Press and hold the physical Multifunction Button on the back of the charging case for exactly 10 seconds.
+Step 5: Watch the earbud LEDs. They will rapidly flash Red and White 3 times simultaneously, followed by a solid Red light for 2 seconds.
+Step 6: Close the lid of the charging case completely and wait 5 seconds.
+Step 7: The system has now been wiped. Open the lid to power them on; they will automatically enter pairing mode as a fresh device.
+
+
+CHAPTER 7: WARRANTY & RMA POLICY
+
+7.1 Warranty Coverage & Terms
+
+* Standard Warranty Period: The Airdopes Apex comes with a 1-Year (12-Month) Limited Manufacturer Warranty from the original date of purchase by the end user.
+* Eligibility Requirements: A valid invoice or authorized proof of purchase showing the date, retailer details, and item description is mandatory to claim warranty benefits.
+* Scope of Coverage:
+* Hardware defects in materials and manufacturing workmanship under standard consumer usage.
+* Internal driver failures, acoustic distortion without visible physical compromise, or microphone transmission failures.
+* Premature lithium battery failure, defined as retaining less than 60 percent of rated capacity within the warranty period under normal charge cycles.
+* Charging case motherboard power delivery failures not caused by external electrical surges.
+
+
+
+7.2 Warranty Exclusions & Void Criteria
+The warranty is strictly null and void under the following conditions:
+
+* Physical or Mechanical Damage: Cracked shells, severed or detached components, torn nozzle meshes, or crushed charging cases resulting from drops, accidents, or neglect.
+* Liquid Ingress: Water, liquid immersion, or chemical damage inside the charging case or earbuds (IPX4 rating covers light splashes on earbuds only; case has zero water resistance).
+* Electrical Overstress: Damage or motherboard burnouts caused by non-compliant chargers exceeding 5V/2A specifications, faulty third-party cables, or power surges.
+* Unauthorized Tampering: Any attempt to open, repair, or modify internal hardware by non-authorized technicians.
+* Normal Cosmetic Wear: Scuffs, micro-scratches, yellowing of silicone ear tips, or cosmetic paint chipping over prolonged use.
+
+7.3 Locating Your Serial Number
+The serial number is required for verifying warranty status and generating a Return Merchandise Authorization (RMA) ticket.
+
+* Location on Hardware: Open the magnetic lid of the charging case. The serial number is laser-etched directly onto the inner ceiling of the lid.
+* Format: PW-APX- followed by a five-digit unit number (Example: PW-APX-10001).
+* Alternative Placement: The serial number is also printed on the barcode label attached to the bottom panel of the original retail box.
+
+7.4 Return Merchandise Authorization (RMA) Workflow
+Step 1: Perform the Hard Factory Reset detailed in Chapter 6.4 to ensure the issue is not a software desync.
+Step 2: Contact Customer Support or invoke the AI Support Agent, providing your product model ("Airdopes Apex"), your serial number (for example PW-APX-10001) and the order ID shown on your invoice (for example ORD-100234).
+Step 3: Once the serial number is verified under active warranty, the system will generate an official RMA ticket number (formatted as RMA-YYMM-XXXXXX, for example RMA-2610-A1B2C3). You can ask the AI Support Agent for the status of your ticket at any time.
+Step 4: Package the defective earbuds alongside the charging case and original Type-C cable in protective padding. Include a slip of paper with your RMA ticket number inside the parcel.
+Step 5: Hand over the package to the assigned courier partner or bring it to an authorized walk-in service center. Following functional inspection and verification of zero physical/liquid damage, an approved ticket qualifies for a repaired unit or brand-new replacement.

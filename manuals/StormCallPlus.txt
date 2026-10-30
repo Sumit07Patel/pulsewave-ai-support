@@ -1,0 +1,279 @@
+CHAPTER 1: PRODUCT OVERVIEW & UNBOXING
+
+1.1 Package Contents
+Carefully inspect the retail package before breaking the security seal. The StormCall Plus box includes:
+
+* 1 x StormCall Plus Smartwatch Core Module (Watch dial)
+* 1 x Pair of Hypoallergenic Silicone Straps (22mm quick-release mechanism)
+* 1 x Magnetic Pogo-Pin Charging Cable (Type-A to 2-Pin, 50 cm length)
+* 1 x User & Diagnostic Manual
+* 1 x Warranty Card & Brand Catalog
+
+1.2 Smartwatch Anatomy (Display & Chassis)
+The StormCall Plus features an aerospace-grade aluminum alloy casing designed for durability and daily wear:
+
+* 1.85-inch AMOLED Display: Full capacitive touch screen with 2.5D curved scratch-resistant glass. Used for all swipe gestures, app navigation, and watch face interactions.
+* Rotating Navigation Crown (Upper Right): A precision-milled physical dial. Rotating the crown scrolls through menus and messages. Pressing the crown inward acts as a "Home" or "Back" button to return to the main watch face.
+* Dedicated Action Button (Lower Right): A flush tactile button used for quick-launching the Workout/Sports tracking menu. Long-pressing this button for 5 seconds triggers the Emergency SOS dialer.
+* High-Fidelity Speaker: A slotted grill located on the left edge of the watch chassis. Delivers audio for Bluetooth phone calls, AI voice assistant responses, alarms, and media playback.
+* Integrated Microphone: A pin-hole microphone positioned on the lower right edge, angled specifically to pick up voice commands and cellular audio while your wrist is raised.
+
+1.3 Back Panel & Biometric Sensors
+The rear plate of the watch rests against the user's wrist and houses critical health hardware:
+
+* Multi-Path Optical Sensor Array: A central cluster utilizing both green and red LED emitters. This module is responsible for continuous Heart Rate (BPM) tracking, Blood Oxygen (SpO2) estimation, and deep sleep phase analysis.
+* Magnetic Charging Contacts: Two exposed metallic nodes located directly above the sensor cluster. These auto-align with the magnetic charging cable to replenish the internal battery.
+* Quick-Release Strap Lugs: Standard 22mm telescopic spring bars located at the top and bottom of the casing, allowing users to swap standard watch bands easily without specialized tools.
+* Serial Number & Regulatory Imprint: Laser-etched along the outer curved rim of the back panel. Formatted as PW-STM-NNNNN, for example PW-STM-50001 (required for all warranty verification and RMA tickets).
+
+
+CHAPTER 2: TECHNICAL SPECIFICATIONS
+
+2.1 Display and Touch Interface
+
+* Screen Type: 1.85-inch Ultra HD AMOLED Display
+* Resolution: 390 x 450 pixels
+* Pixel Density: 326 PPI
+* Peak Brightness: Up to 600 nits (High Brightness Mode for direct sunlight readability)
+* Refresh Rate: 60Hz
+* Touch Mechanism: Multi-point capacitive touch surface with 2.5D curved anti-scratch mineral glass coating
+* Always-On Display (AOD): Supported (Analog and Digital clock faces available)
+
+2.2 Hardware and Sensors
+
+* Microcontroller Unit (MCU): Dual-core real-time embedded processor with dedicated low-power graphic rendering accelerator
+* Biometric Sensor Array: Optical photoplethysmography (PPG) module with dual-wavelength LED emitters (Green 525nm for heart rate, Red 660nm / Infrared 940nm for blood oxygen estimation)
+* Motion Sensor: 3-Axis MEMS Accelerometer with high-precision step and wrist-raise gesture detection
+* Audio Hardware: Integrated 0.8W acoustic micro-speaker cavity paired with an omnidirectional electret condenser microphone
+* Haptic Feedback: Integrated resonant linear vibration motor for notification alerts and crown scrolling feedback
+
+2.3 Connectivity and Compatibility
+
+* Wireless Standard: Bluetooth v5.2 with Bluetooth Low Energy (BLE) and Enhanced Data Rate (EDR) for direct calling
+* Effective Range: 10 meters (33 feet) line-of-sight
+* Companion Application: Companion App available on Android and iOS platforms
+* Mobile Operating System Compatibility: Android 7.0 or higher, iOS 12.0 or higher
+* Satellite Positioning: Connected GPS (relies on paired smartphone's GPS module for outdoor workout track mapping)
+
+2.4 Battery and Power Characteristics
+
+* Battery Type: Integrated rechargeable Lithium-Polymer cell
+* Capacity: 300mAh
+* Typical Usage Runtime: Up to 7 days on a single charge (heart rate tracking enabled, notifications on, Bluetooth calling off)
+* Heavy Usage Runtime: 2 to 3 days (continuous heart rate monitoring, frequent Bluetooth calling, Always-On Display active)
+* Standby Duration: Up to 20 days with Bluetooth disabled and basic step tracking active
+* Charging Interface: 2-Pin magnetic pogo-pin dock to USB Type-A
+* Charging Voltage and Current: 5V/1A (Standard USB output)
+* Full Recharge Time: Approximately 120 minutes (0 to 100 percent)
+
+2.5 Physical Build and Environmental Limits
+
+* Chassis Material: CNC-machined aerospace-grade aluminum alloy with polycarbonate composite backplate
+* Strap Size and Material: 22mm interchangeable liquid silicone strap with stainless steel buckle
+* Dial Dimensions: 45.2mm x 38.5mm x 11.2mm
+* Total Weight: 45 grams (including silicone strap)
+* Water and Dust Ingress Protection: IP68 rating (submersible up to 1.5 meters in fresh water for up to 30 minutes)
+* Operational Temperature Range: -10 degrees Celsius to 50 degrees Celsius (14 degrees Fahrenheit to 122 degrees Fahrenheit)
+
+CHAPTER 3: FIRST-TIME SETUP & PAIRING
+
+3.1 Waking Up the Device
+
+* The StormCall Plus ships in a dormant shipping mode to preserve battery health.
+* Connect the magnetic pogo-pin charger to the back of the watch and plug the USB-A end into a standard 5V/1A power adapter.
+* The watch will vibrate, and the display will turn on, presenting a QR code and language selection menu. This confirms the device is awake and ready for pairing.
+
+3.2 Downloading the Companion App
+
+* Do not attempt to pair the watch directly through your phone's native Bluetooth menu first. The watch must be bound through the companion application to calibrate time, weather, and firmware data.
+* Scan the QR code displayed on the watch screen using your smartphone camera.
+* Alternatively, search for the official companion application in the Apple App Store (iOS) or Google Play Store (Android) and install it.
+
+3.3 Application Binding Process
+
+* Step 1: Open the companion app and create a user account, inputting basic physical metrics (height, weight, age) to calibrate the fitness algorithms.
+* Step 2: Ensure your smartphone's Bluetooth and GPS/Location services are turned on.
+* Step 3: Navigate to the "Device" tab in the app and tap "Add Device".
+* Step 4: Select "StormCall Plus" from the radar list.
+* Step 5: A pairing request will appear on the smartwatch display. Tap the green checkmark icon on the watch face to confirm the binding process.
+
+3.4 Enabling Bluetooth Calling (Dual Pairing)
+To utilize the smartwatch's speaker and microphone for phone calls, a secondary Bluetooth audio profile must be connected.
+
+* Step 1: Once the watch is bound to the app, swipe down on the main watch face to access the Quick Settings control center.
+* Step 2: Tap the "Telephone" or "Bluetooth Call" icon so it highlights green or blue, indicating the calling radio is active.
+* Step 3: Open your smartphone's native Bluetooth settings menu.
+* Step 4: Look for a new device named "StormCall_Audio" and tap to connect.
+* Step 5: Once connected, all incoming cellular calls can now be answered and spoken directly through the watch.
+
+3.5 Granting System Permissions
+
+* For notifications to push correctly, you must grant the companion app permission to access your smartphone's notification center.
+* Android Users: Go to Settings > Apps > (Companion App) > Permissions, and allow "Phone", "Contacts", "Call Logs", and "SMS". Also, enable "Notification Access" in the special system access menu.
+* iOS Users: When prompted during pairing, select "Allow" for "Share System Notifications" to push iMessage and third-party app alerts to the watch display.
+
+
+CHAPTER 4: CONTROLS & FEATURES
+
+4.1 Physical Crown and Action Button Operations
+
+Rotating Navigation Crown:
+
+* Press Once: Wakes the screen if sleeping; opens the main App Menu from the home watch face; acts as a "Back" button when inside any sub-menu.
+* Double-Press Quickly: Toggles the App Menu view style between Honeycomb Grid, List, Waterfall, and Carousel layout modes.
+* Rotate Clockwise / Counter-Clockwise: Smoothly scrolls up and down through menus, messages, and setting lists without obscuring the screen with your fingers. On the home watch face, rotating the crown switches between saved watch faces.
+* Long-Press for 3 Seconds: Prompts the system shutdown, restart, and factory reset dialog.
+
+Dedicated Action Button:
+
+* Press Once: Directly launches the Workout / Multi-Sport tracking directory.
+* Long-Press for 5 Seconds: Activates the Emergency SOS dialing sequence, automatically placing a call to your designated primary emergency contact via the paired smartphone.
+
+4.2 Touch Screen Navigation Matrix
+
+* Swipe Down (From Top Edge): Opens the Quick Settings / Control Center panel (Bluetooth Call toggle, Brightness slider, DND Mode, Flashlight, Battery Saver, and Settings shortcut).
+* Swipe Up (From Bottom Edge): Opens the Notification Tray to view recent SMS, messaging, and application alerts.
+* Swipe Right (From Left Edge): Opens the Split-Screen Quick Widget, displaying the date, time, battery percentage, recent contacts, and last used apps.
+* Swipe Left (From Right Edge): Cycles through primary Smart Widgets in sequence: Activity Goal Rings (Steps/Calories/Active Time), Heart Rate Monitor, SpO2 Reading, Weather Forecast, and Music Remote Control.
+* Press and Hold Watch Face (Center Screen): Enters the Watch Face Selection gallery to swap or preview installed designs.
+
+4.3 Bluetooth Calling Interface
+
+* Phone Dialpad: An interactive on-screen numeric keypad allows you to dial phone numbers directly from your wrist.
+* Frequent Contacts: Sync up to 20 favorite contacts through the companion mobile app for single-tap speed dialing.
+* Call History: View recent incoming, outgoing, and missed calls directly on the watch.
+* In-Call Management: During an active call, use on-screen icons to adjust speaker output volume, mute your microphone, or transfer audio back to your smartphone handset.
+
+4.4 Health and Activity Monitoring
+
+* 24/7 Heart Rate Tracking: Monitors resting and active pulse rate continuously. Real-time graphs display on the watch, with customizable vibration warnings for abnormally high or low resting rates.
+* SpO2 Oxygen Saturation: Spot-check arterial blood oxygen concentration. Keep your arm motionless and flat on a table for 15 seconds during measurement for accurate data.
+* Sleep Stage Analysis: Automatically detects sleep onset, wake cycles, REM, light sleep, and deep sleep stages, computing a daily Sleep Quality Score synced to the companion app.
+* Multi-Sport Modes: Supports over 100 indoor and outdoor workout profiles (Running, Cycling, Swimming, HIIT, Yoga, etc.), recording duration, calories burned, average heart rate, and step cadence.
+
+4.5 Utilities and System Tools
+
+* Music Player Controller: Controls media playback on your paired smartphone (Play, Pause, Skip Track, Previous Track, and Volume Adjustment).
+* Remote Camera Shutter: Triggers your smartphone's camera shutter remotely with a 3-second countdown timer.
+* AI Voice Assistant: Single-tap icon summons your smartphone's native voice assistant (Siri or Google Assistant) through the watch's microphone and speaker.
+* Find My Phone: Triggers a loud alarm tone and vibration on your paired smartphone if misplaced within Bluetooth range.
+* Sedentary & Hydration Reminders: Configurable wrist vibration prompts reminding you to drink water and stand up after periods of inactivity.
+
+
+CHAPTER 5: CARE, MAINTENANCE & SAFETY
+
+5.1 Cleaning & Hygiene
+
+* Display and Chassis: The AMOLED screen and aluminum body should be wiped down with a dry, lint-free microfiber cloth. Do not use harsh chemical cleaners, glass sprays, or compressed air.
+* Sensor Array: The optical sensors on the back panel must remain clean for accurate heart rate and SpO2 readings. Wipe away sweat or lotion residue with a lightly damp cloth after intense workouts.
+* Silicone Straps: Remove the quick-release silicone bands and wash them with mild soap and warm water. Ensure they are completely dry before reattaching to the watch body.
+* Charging Dock: Periodically inspect the magnetic pogo-pin contacts. Use a dry cotton swab to gently remove dust or skin oils that may cause slow charging. Never insert metal objects into the charging port.
+
+5.2 Battery Preservation
+
+* Optimal Charging Cycle: To maximize the lifespan of the lithium-polymer battery, recharge the watch when it drops to 20 percent rather than letting it drain to 0 percent.
+* Avoid Overheating: Do not leave the smartwatch on the charger overnight or exposed to direct sunlight on a car dashboard, as extreme heat degrades battery cells rapidly.
+* Efficient Usage: To extend multi-day battery life, utilize the Battery Saver mode, lower the screen brightness, and disable the Always-On Display when not strictly required.
+
+5.3 IP68 Water & Dust Resistance Limitations
+
+* Safe Exposures: The IP68 rating allows the StormCall Plus to withstand complete dust ingress and submersion in up to 1.5 meters of fresh water for up to 30 minutes. It is safe for rain, heavy sweat, and accidental splashes.
+* Unsafe Exposures (Warranty Void): Do not wear the watch in hot showers, saunas, or steam rooms. High-temperature steam can bypass and permanently degrade the waterproof seals.
+* Saltwater and Chemicals: Avoid exposure to saltwater, highly chlorinated pools, soapy water, or perfumes. If the watch comes into contact with these liquids, rinse it immediately with fresh water and dry it thoroughly.
+
+5.4 Health & Safety Precautions
+
+* Skin Sensitivity: Ensure a snug but comfortable fit. Wearing the strap too tightly can cause skin irritation or restricted blood flow, while wearing it too loosely will compromise the accuracy of the optical health sensors.
+* Not a Medical Device: The heart rate and SpO2 readings provided by this smartwatch are designed for general fitness and wellness tracking only. They are not intended to diagnose, monitor, treat, cure, or prevent any medical conditions.
+* Driving and Distraction: Do not attempt to read long messages, type, or dial phone numbers on the watch screen while operating a motor vehicle or heavy machinery.
+
+
+CHAPTER 6: TROUBLESHOOTING & RESET
+
+6.1 Connectivity and Notification Issues
+
+Issue: The watch frequently disconnects from the smartphone or fails to sync data.
+Solution: Smartphone operating systems aggressively kill background apps to save battery. Open your smartphone's recent apps menu, locate the companion app, and lock it in the background (usually a padlock icon). Additionally, go to your phone's battery settings and set the companion app to "Unrestricted" or "No Battery Optimization".
+
+Issue: Incoming calls ring on the phone, but the watch does not vibrate or show caller ID.
+Solution: Ensure the secondary "StormCall_Audio" Bluetooth profile is connected in your phone's native Bluetooth settings. On the watch, swipe down to the Control Center and verify the Telephone icon is toggled ON (green/blue).
+
+Issue: Not receiving WhatsApp, SMS, or application notifications on the watch.
+Solution: First, check if Do Not Disturb (DND) mode is active on the watch (crescent moon icon in the Control Center). Second, open the companion app, navigate to "Notification Settings", and verify that the toggles for SMS, WhatsApp, and other desired apps are enabled. Ensure the app has system-level notification access on your phone.
+
+6.2 Display and Touch Malfunctions
+
+Issue: The screen is black and will not wake up when the crown is pressed or wrist is raised.
+Solution: The battery may be critically depleted. Place the watch on the magnetic charger for at least 15 minutes. If the screen remains black but the watch vibrates, perform a Hard Force Restart (detailed in Section 6.5).
+
+Issue: The touch screen is unresponsive to swipes, or registers "ghost touches".
+Solution: Moisture or sweat on the screen can disrupt the capacitive touch matrix. Wipe the screen completely dry. If the watch is submerged in water, the touch screen will not function until it is removed and dried.
+
+6.3 Health Tracking Inaccuracies
+
+Issue: Heart rate monitor drops out, shows flat lines, or reads abnormally high during a workout.
+Solution: The watch strap is likely too loose, allowing ambient light to interfere with the optical sensor. Tighten the strap by one notch and push the watch one inch higher up your arm, away from the protruding wrist bone. Ensure the back sensor is wiped clean of dried sweat.
+
+Issue: Step counter is drastically undercounting or registering steps while sitting.
+Solution: The pedometer relies on arm swing momentum. Walking with your hands in your pockets or pushing a shopping cart will result in undercounted steps. Conversely, aggressive typing or washing dishes may register phantom steps. This is a normal limitation of wrist-based accelerometers.
+
+6.4 Battery and Charging Failures
+
+Issue: The watch displays the charging icon, but battery percentage does not increase.
+Solution: The power adapter may be outputting voltage that is too high, causing the watch's overvoltage protection to block the current. Switch to a standard 5V/1A adapter or plug the USB cable directly into a computer or laptop USB port.
+
+Issue: Rapid battery drain (100 percent to 0 percent in under 24 hours).
+Solution: Disable "Always-On Display", lower screen brightness, and change continuous heart rate monitoring from "Real-Time" to "Every 30 Minutes" in the companion app. If the battery still drains rapidly while sitting idle, the lithium cell may be defective.
+
+6.5 Reboot and Factory Reset Procedures
+
+Soft Restart:
+If the watch interface is sluggish but responsive, long-press the Rotating Navigation Crown for 3 seconds. Tap "Restart" on the screen. No data will be lost.
+
+Hard Force Restart:
+If the screen is frozen or completely unresponsive, press and hold both the Navigation Crown and the lower Action Button simultaneously for 15 seconds. The screen will go black, and the brand logo will appear, indicating a successful hardware reboot.
+
+Factory Reset (Data Wipe):
+If experiencing persistent software bugs or preparing to sell the watch, perform a full wipe.
+Step 1: Swipe down from the home screen and tap the gear icon for Settings.
+Step 2: Scroll down to "System" and select "Reset".
+Step 3: Tap the checkmark to confirm. This will erase all local data, settings, and watch faces, returning the device to its out-of-box state.
+Step 4: Go to your phone's Bluetooth menu and "Forget" both the StormCall Plus and StormCall_Audio connections before attempting to pair again.
+
+
+CHAPTER 7: WARRANTY & RMA POLICY
+
+7.1 Warranty Coverage & Terms
+
+* Standard Warranty Period: The StormCall Plus comes with a 1-Year (12-Month) Limited Manufacturer Warranty from the original date of purchase by the end user.
+* Eligibility Requirements: A valid invoice or authorized proof of purchase showing the date, retailer details, and item description is mandatory to claim warranty benefits.
+* Scope of Coverage:
+* Hardware defects in materials and manufacturing workmanship under standard consumer usage.
+* Failures of the AMOLED display (e.g., dead pixels, touch matrix failure) without visible physical compromise or glass breakage.
+* Internal biometric sensor malfunctions or Bluetooth radio failures.
+* Premature lithium battery failure, defined as retaining less than 60 percent of rated capacity within the warranty period under normal charge cycles.
+
+
+
+7.2 Warranty Exclusions & Void Criteria
+The warranty is strictly null and void under the following conditions:
+
+* Physical or Mechanical Damage: Cracked screen glass, crushed aluminum chassis, or severed sensor panels resulting from drops, impacts, or neglect.
+* Unsafe Liquid/Vapor Ingress: Water damage resulting from exposure to hot water, steam rooms, saunas, or high-pressure jets which bypass and degrade the IP68 environmental seals.
+* Electrical Overstress: Motherboard burnouts caused by non-compliant high-voltage chargers, faulty third-party cables, or electrical surges.
+* Unauthorized Tampering: Any attempt to pry open the watch casing, repair internal components, or modify the system firmware by non-authorized personnel.
+* Normal Cosmetic Wear: Scuffs on the aluminum body, micro-scratches on the screen, or natural degradation/tearing of the silicone straps over prolonged use.
+
+7.3 Locating Your Serial Number
+The serial number is required for verifying warranty status and generating a Return Merchandise Authorization (RMA) ticket.
+
+* Location on Hardware: Look at the back panel of the smartwatch. The serial number is laser-etched along the outer curved rim of the polycarbonate casing.
+* Format: PW-STM- followed by a five-digit unit number (Example: PW-STM-50001).
+* Alternative Placement: The serial number is also printed on the barcode label attached to the bottom panel of the original retail box.
+
+7.4 Return Merchandise Authorization (RMA) Workflow
+Step 1: Perform the Factory Reset (Data Wipe) detailed in Chapter 6.5 to ensure the issue is not a software glitch and to erase your personal health/contact data.
+Step 2: Contact Customer Support or invoke the AI Support Agent, providing your product model ("StormCall Plus"), your serial number (for example PW-STM-50001) and the order ID shown on your invoice (for example ORD-100521).
+Step 3: Once the serial number is verified under active warranty, the system will generate an official RMA ticket number (formatted as RMA-YYMM-XXXXXX, for example RMA-2610-A1B2C3). You can ask the AI Support Agent for the status of your ticket at any time.
+Step 4: Package the smartwatch core module and the original magnetic charging cable in protective padding. You may remove and keep the silicone straps. Include a slip of paper with your RMA ticket number inside the parcel.
+Step 5: Hand over the package to the assigned courier partner or bring it to an authorized walk-in service center. Following functional inspection and verification of zero physical or liquid damage, an approved ticket qualifies for a repaired unit or brand-new replacement.
